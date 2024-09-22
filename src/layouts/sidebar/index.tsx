@@ -52,7 +52,7 @@ export default function Sidebar() {
 
   return (
     <nav className="relative">
-      <div className="h-screen w-[200px] p-5 z-20 bg-sky-700 relative">
+      <div className="h-screen w-[200px] p-5 z-20 bg-sky-700 shadow-2xl relative">
         <div className="flex flex-col h-full">
           {/* icon */}
           <h1 className="text-center text-white mb-5 font-semibold uppercase border-b border-gray-500 pb-4">
