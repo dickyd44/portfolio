@@ -11,7 +11,7 @@ import { ContactIcon } from "@/src/assets/icon-sidebar";
 const SIDEBAR_LINK = [
   {
     name: "Home",
-    link: "#",
+    link: "#home",
     icon: <HomeIcon />,
   },
   {
@@ -66,25 +66,13 @@ export default function Sidebar() {
   }, [scrollPos]);
 
   return (
-    <nav className="relative">
-      <div className="h-screen w-24 z-3 bg-white shadow-2xl relative">
-        <div className="flex flex-col h-full">
+    <nav className="fixed">
+      <div className="h-screen w-24 z-3 bg-white shadow-2xl">
+        <div className="flex flex-col">
           {/* icon */}
           <div className="h-11 bg-teal-600 flex items-center justify-center">
             <h1 className="text-center text-white font-semibold">dicky.</h1>
           </div>
-
-          {/* humberger */}
-          {/* <div
-          onClick={handleOpen}
-          className={`${
-            isOpen ? "open" : ""
-          } flex flex-col items-center w-fit gap-[7px] cursor-pointer md:hidden z-20`}
-        >
-          <span className="transition-all duration-500 ease-in-out h-[2px] w-5 bg-black-500 rounded-full"></span>
-          <span className="transition-all duration-500 ease-in-out h-[2px] w-4 bg-black-500 rounded-full"></span>
-          <span className="transition-all duration-500 ease-in-out h-[2px] w-5 bg-black-500 rounded-full"></span>
-        </div> */}
 
           {/* menu */}
           <div className="flex flex-col items-center text-black uppercase font-body w-full h-20">
@@ -103,6 +91,18 @@ export default function Sidebar() {
           </div>
         </div>
       </div>
+
+      {/* humberger */}
+      {/* <div
+          onClick={handleOpen}
+          className={`${
+            isOpen ? "open" : ""
+          } flex flex-col items-center w-fit gap-[7px] cursor-pointer md:hidden z-20`}
+        >
+          <span className="transition-all duration-500 ease-in-out h-[2px] w-5 bg-black-500 rounded-full"></span>
+          <span className="transition-all duration-500 ease-in-out h-[2px] w-4 bg-black-500 rounded-full"></span>
+          <span className="transition-all duration-500 ease-in-out h-[2px] w-5 bg-black-500 rounded-full"></span>
+        </div> */}
 
       {/* navbar mobile menu */}
       {/* <NavbarDropdown isOpen={isOpen} /> */}
