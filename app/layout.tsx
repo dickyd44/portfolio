@@ -1,6 +1,6 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
-import "./globals.css";
 import { AppSidebar } from "@/src/layouts";
 
 const rubik = Rubik({
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${rubik.className}`}>
+      <body className={rubik.className}>
         <div className="flex">
           <AppSidebar />
           {children}

@@ -1,28 +1,43 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import { HomeIcon } from "@/src/assets/icon-sidebar";
+import { AboutIcon } from "@/src/assets/icon-sidebar";
+import { ServiceIcon } from "@/src/assets/icon-sidebar";
+import { PortfolioIcon } from "@/src/assets/icon-sidebar";
+import { ExperienceIcon } from "@/src/assets/icon-sidebar";
+import { ContactIcon } from "@/src/assets/icon-sidebar";
 // import NavbarDropdown from "./NavbarDropdown";
 
 const SIDEBAR_LINK = [
   {
     name: "Home",
     link: "#",
+    icon: <HomeIcon />,
   },
   {
-    name: "About",
+    name: "About me",
     link: "#",
+    icon: <AboutIcon />,
   },
   {
-    name: "Projects",
+    name: "Service",
     link: "#",
+    icon: <ServiceIcon />,
+  },
+  {
+    name: "Portfolio",
+    link: "#",
+    icon: <PortfolioIcon />,
   },
   {
     name: "Experience",
     link: "#",
+    icon: <ExperienceIcon />,
   },
   {
     name: "Contact",
     link: "#",
+    icon: <ContactIcon />,
   },
 ];
 
@@ -52,12 +67,12 @@ export default function Sidebar() {
 
   return (
     <nav className="relative">
-      <div className="h-screen w-[200px] p-5 z-20 bg-sky-700 shadow-2xl relative">
+      <div className="h-screen w-24 z-3 bg-white shadow-2xl relative">
         <div className="flex flex-col h-full">
           {/* icon */}
-          <h1 className="text-center text-white mb-5 font-semibold uppercase border-b border-gray-500 pb-4">
-            Dicky Darmawan
-          </h1>
+          <div className="h-11 bg-teal-600 flex items-center justify-center">
+            <h1 className="text-center text-white font-semibold">dicky.</h1>
+          </div>
 
           {/* humberger */}
           {/* <div
@@ -72,23 +87,19 @@ export default function Sidebar() {
         </div> */}
 
           {/* menu */}
-          <div className="flex flex-col items-center text-white text-sm lg:text-base font-body w-full">
+          <div className="flex flex-col items-center text-black uppercase font-body w-full h-20">
             {SIDEBAR_LINK.map((link, idx) => (
               <a
                 key={idx}
                 href={link.link}
-                className="navlink border-b border-gray-800 pb-4 w-full text-center mb-5"
+                className="nav-link border-b border-zinc-200 py-3 w-full text-center hover:text-teal-600"
               >
-                {link.name}
+                <div className="flex justify-center items-center mb-1">
+                  {link.icon}
+                </div>
+                <span className="text-xs">{link.name}</span>
               </a>
             ))}
-          </div>
-
-          {/* button */}
-          <div className="md:flex justify-around items-center text-sm lg:text-base font-head font-medium">
-            <a href="#">
-              <p className="text-white underline cursor-pointer">Login</p>
-            </a>
           </div>
         </div>
       </div>
