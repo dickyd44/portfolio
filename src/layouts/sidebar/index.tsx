@@ -66,8 +66,8 @@ export default function Sidebar() {
   }, [scrollPos]);
 
   return (
-    <aside className="fixed hidden md:block">
-      <div className="h-screen w-0 md:w-24 z-3 bg-white shadow-2xl">
+    <aside className="fixed hidden lg:block z-50">
+      <div className="h-screen w-0 lg:w-24 bg-white shadow-2xl">
         <div className="flex flex-col">
           {/* icon */}
           <div className="h-11 bg-teal-600 flex items-center justify-center">

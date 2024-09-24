@@ -57,7 +57,7 @@ export default function ServiceSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
           {CARD_SERVICE.map((card, idx) => (
             <div key={idx} className="bg-white rounded-md p-8">
-              <div className="rounded-full p-4 border-dotted border-2 border-teal-500 text-teal-500 w-[86px]">
+              <div className="rounded-full p-4 border-dotted border-2 border-teal-600 text-teal-600 w-[86px]">
                 {card.icon}
               </div>
 
