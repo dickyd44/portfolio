@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
-import { HomeIcon } from "@/src/assets/icon-sidebar";
-import { AboutIcon } from "@/src/assets/icon-sidebar";
-import { ServiceIcon } from "@/src/assets/icon-sidebar";
-import { PortfolioIcon } from "@/src/assets/icon-sidebar";
-import { ExperienceIcon } from "@/src/assets/icon-sidebar";
-import { ContactIcon } from "@/src/assets/icon-sidebar";
+import { HomeIcon } from "@/src/assets/icon/icon-sidebar";
+import { AboutIcon } from "@/src/assets/icon/icon-sidebar";
+import { ServiceIcon } from "@/src/assets/icon/icon-sidebar";
+import { PortfolioIcon } from "@/src/assets/icon/icon-sidebar";
+import { ExperienceIcon } from "@/src/assets/icon/icon-sidebar";
+import { ContactIcon } from "@/src/assets/icon/icon-sidebar";
 // import NavbarDropdown from "./NavbarDropdown";
 
 const SIDEBAR_LINK = [
@@ -66,8 +66,8 @@ export default function Sidebar() {
   }, [scrollPos]);
 
   return (
-    <nav className="fixed">
-      <div className="h-screen w-24 z-3 bg-white shadow-2xl">
+    <aside className="fixed hidden md:block">
+      <div className="h-screen w-0 md:w-24 z-3 bg-white shadow-2xl">
         <div className="flex flex-col">
           {/* icon */}
           <div className="h-11 bg-teal-600 flex items-center justify-center">
@@ -106,6 +106,6 @@ export default function Sidebar() {
 
       {/* navbar mobile menu */}
       {/* <NavbarDropdown isOpen={isOpen} /> */}
-    </nav>
+    </aside>
   );
 }

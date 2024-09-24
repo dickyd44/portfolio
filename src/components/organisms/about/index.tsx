@@ -49,7 +49,7 @@ export default function AboutSection() {
           Front-End Developer based in Indonesia
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 mt-10">
           <div className="bg-white rounded-sm shadow-xl p-4 w-auto">
             <Image
               src={Profile}
@@ -75,23 +75,15 @@ export default function AboutSection() {
               interactions. Check out my Portfolio
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-5 mt-10 w-full">
               <div>
                 {IDENTITY.map((identity, idx) => (
-                  <div
-                    key={idx}
-                    className="relative grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-start mb-3 items-center"
-                  >
-                    {/* Left Column - Title */}
-                    <div className="pr-4 text-gray-800 font-medium capitalize">
+                  <div key={idx} className="grid grid-cols-2 mb-3 items-center">
+                    <div className="text-gray-800 font-medium capitalize text-base md:text-base xl:text-xs 2xl:text-sm">
                       {identity.title}
                     </div>
 
-                    {/* Divider Line */}
-                    <div className="absolute right-[11.5rem] top-0 h-full w-0.5 bg-zinc-400 hidden lg:block" />
-
-                    {/* Right Column - Subtitle */}
-                    <div className="pl-4 text-zinc-500 capitalize">
+                    <div className="pl-4 text-zinc-500 capitalize text-base md:text-base xl:text-xs 2xl:text-sm border-l border-zinc-400">
                       {identity.subtitle}
                     </div>
                   </div>
@@ -100,20 +92,12 @@ export default function AboutSection() {
 
               <div>
                 {ACCOUNT.map((account, idx) => (
-                  <div
-                    key={idx}
-                    className="relative grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-start mb-3 items-center"
-                  >
-                    {/* Left Column - Title */}
-                    <div className="pr-4 text-gray-800 font-medium capitalize">
+                  <div key={idx} className="grid grid-cols-2 mb-3 items-center">
+                    <div className="text-gray-800 font-medium capitalize text-base md:text-base xl:text-xs 2xl:text-sm">
                       {account.title}
                     </div>
 
-                    {/* Divider Line */}
-                    <div className="absolute right-[11.5rem] top-0 h-full w-0.5 bg-zinc-400 hidden lg:block" />
-
-                    {/* Right Column - Subtitle */}
-                    <div className="pl-4 text-zinc-500 capitalize">
+                    <div className="pl-4 text-zinc-500 capitalize border-l border-zinc-400 text-base md:text-base xl:text-xs 2xl:text-sm">
                       {account.subtitle}
                     </div>
                   </div>

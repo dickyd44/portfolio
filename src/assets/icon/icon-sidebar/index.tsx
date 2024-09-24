@@ -2,14 +2,14 @@ export function HomeIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="26"
+      height="26"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="icon icon-tabler icons-tabler-outline icon-tabler-home"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -24,14 +24,14 @@ export function AboutIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="26"
+      height="26"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="icon icon-tabler icons-tabler-outline icon-tabler-id"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -48,14 +48,14 @@ export function ServiceIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="26"
+      height="26"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="icon icon-tabler icons-tabler-outline icon-tabler-bell-heart"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -70,14 +70,14 @@ export function PortfolioIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="26"
+      height="26"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="icon icon-tabler icons-tabler-outline icon-tabler-briefcase"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -93,14 +93,14 @@ export function ExperienceIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="26"
+      height="26"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="icon icon-tabler icons-tabler-outline icon-tabler-report"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -119,14 +119,14 @@ export function ContactIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="26"
+      height="26"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="icon icon-tabler icons-tabler-outline icon-tabler-user-circle"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
