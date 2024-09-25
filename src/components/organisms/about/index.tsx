@@ -83,11 +83,11 @@ export default function AboutSection() {
                       key={idx}
                       className="grid grid-cols-2 mb-3 items-center"
                     >
-                      <div className="text-gray-800 font-medium capitalize text-base md:text-base xl:text-xs 2xl:text-sm">
+                      <div className="text-gray-800 font-medium capitalize text-sm md:text-base xl:text-[11px] 2xl:text-sm">
                         {identity.title}
                       </div>
 
-                      <div className="pl-4 text-zinc-500 capitalize text-base md:text-base xl:text-xs 2xl:text-sm border-l border-zinc-400">
+                      <div className="pl-4 text-zinc-500 capitalize text-sm md:text-base xl:text-[11px] 2xl:text-sm border-l border-zinc-400">
                         {identity.subtitle}
                       </div>
                     </div>
@@ -100,11 +100,11 @@ export default function AboutSection() {
                       key={idx}
                       className="grid grid-cols-2 mb-3 items-center"
                     >
-                      <div className="text-gray-800 font-medium capitalize text-base md:text-base xl:text-xs 2xl:text-sm">
+                      <div className="text-gray-800 font-medium capitalize text-sm md:text-base xl:text-[11px] 2xl:text-sm">
                         {account.title}
                       </div>
 
-                      <div className="pl-4 text-zinc-500 capitalize border-l border-zinc-400 text-base md:text-base xl:text-xs 2xl:text-sm">
+                      <div className="pl-4 text-zinc-500 capitalize border-l border-zinc-400 text-sm md:text-base xl:text-[11px] 2xl:text-sm">
                         {account.subtitle}
                       </div>
                     </div>

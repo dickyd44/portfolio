@@ -2,9 +2,9 @@ import React from "react";
 
 export default function FormContact() {
   return (
-    <div className="col-span-2 bg-white rounded-sm p-7">
+    <div className="col-span-2 bg-white rounded-sm p-7 h-full flex flex-col justify-between">
       <h2 className="text-xl font-semibold mb-4 p-2">SAY SOMETHING</h2>
-      <form action="#" method="POST">
+      <form action="#" method="POST" className="flex-grow flex flex-col">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="flex flex-col">
             <input
@@ -50,7 +50,7 @@ export default function FormContact() {
           ></textarea>
         </div>
 
-        <div className="flex justify-end">
+        <div className="mt-auto flex justify-end">
           <button
             type="submit"
             className="mt-6 bg-teal-600 text-white px-5 py-3 text-sm rounded-sm hover:bg-teal-700 transition-colors duration-300"

@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={rubik.className}>
         <div className="flex">
           <AppSidebar />
-          <div className="flex-col w-full">
+          <div className="flex-col w-full lg:ml-12">
             {children}
             <AppFooter />
           </div>
