@@ -39,10 +39,10 @@ export default function HomeSection() {
 
   return (
     <section id="home" className="container flex items-center min-h-screen">
-      <div className="flex flex-col justify-center space-y-4">
-        <h4 className="text-2xl font-medium">Hello there...</h4>
-        <h2 className="text-7xl font-bold">Dicky Darmawan</h2>
-        <h3 className="text-2xl font-medium">
+      <div className="container flex flex-col justify-center space-y-4">
+        <h4 className="text-xl md:text-2xl font-medium">Hello there...</h4>
+        <h2 className="text-6xl md:text-7xl font-bold">Dicky Darmawan</h2>
+        <h3 className="text-xl md:text-2xl font-medium">
           I Am a Passionate{" "}
           {texts[currentTextIndex].split("").map((letter, index) => (
             <motion.span

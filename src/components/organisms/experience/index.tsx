@@ -32,7 +32,7 @@ const CARDS = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="flex items-center py-28">
+    <section id="experience" className="container flex items-center py-28">
       <div className="container">
         <h1 className="text-4xl uppercase font-semibold">experience</h1>
         <div className="my-3 border-[1px] border-teal-600 w-16" />
@@ -44,7 +44,7 @@ export default function ExperienceSection() {
           {CARDS.map((card, idx) => (
             <div
               key={idx}
-              className="relative h-full pb-16 border border-slate-200 rounded-sm shadow"
+              className="relative h-full pb-16 border border-slate-300 rounded-sm shadow"
             >
               <div className="relative w-full overflow-hidden group">
                 <Image
@@ -75,7 +75,7 @@ export default function ExperienceSection() {
                   {card.subtitle}
                 </p>
                 <div className="absolute bottom-5">
-                  <div className="text-sm w-32 h-10 border border-slate-200 hover:bg-teal-600 transition-colors duration-300 hover:text-white cursor-pointer shadow mt-3">
+                  <div className="text-sm w-32 h-10 border border-slate-300 hover:bg-teal-600 transition-colors duration-300 hover:text-white cursor-pointer shadow mt-3">
                     <div className="flex justify-center items-center h-full capitalize">
                       read more
                     </div>

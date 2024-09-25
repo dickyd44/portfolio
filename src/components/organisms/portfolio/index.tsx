@@ -17,7 +17,10 @@ const IMAGES = [
 
 export default function PortfolioSection() {
   return (
-    <section id="portfolio" className="min-h-screen flex items-center">
+    <section
+      id="portfolio"
+      className="container min-h-screen flex items-center"
+    >
       <div className="container py-20">
         <h1 className="text-4xl uppercase font-semibold">latest works</h1>
         <div className="my-3 border-[1px] border-teal-600 w-16" />
@@ -33,7 +36,7 @@ export default function PortfolioSection() {
                 alt="portfolio"
                 width={1000}
                 height={1000}
-                className="h-[400px] 2xl:h-[420px] xl:h-[350px] lg:h-[290px] md:h-[330px] w-full object-cover rounded-sm group-hover:scale-105 transition-all duration-300 ease-in-out coursor-pointer"
+                className="h-[400px] 2xl:h-[350px] xl:h-[300px] lg:h-[240px] md:h-[300px] w-full object-cover rounded-sm group-hover:scale-105 transition-all duration-300 ease-in-out coursor-pointer"
               />
               <div className="z-0 absolute inset-0 bg-black rounded-sm bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
                 <p className="text-xl font-semibold text-white mb-3">
