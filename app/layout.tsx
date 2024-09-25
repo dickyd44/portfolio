@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
-import { AppSidebar } from "@/src/layouts";
+import { AppFooter, AppSidebar } from "@/src/layouts";
 
 const rubik = Rubik({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -24,7 +24,10 @@ export default function RootLayout({
       <body className={rubik.className}>
         <div className="flex">
           <AppSidebar />
-          {children}
+          <div className="flex-col w-full">
+            {children}
+            <AppFooter />
+          </div>
         </div>
       </body>
     </html>

@@ -41,7 +41,7 @@ const ACCOUNT = [
 
 export default function AboutSection() {
   return (
-    <section className="bg-slate-200 min-h-screen flex items-center">
+    <section id="about" className="bg-slate-200 min-h-screen flex items-center">
       <div className="container py-20">
         <h1 className="text-4xl uppercase font-semibold">About Me</h1>
         <div className="my-3 border-[1px] border-teal-600 w-16" />
@@ -56,7 +56,7 @@ export default function AboutSection() {
               alt="profile"
               width={1000}
               height={1000}
-              className="object-cover w-full h-[473px] rounded-sm"
+              className="object-cover object-right w-full h-[473px] rounded-sm"
             />
           </div>
 

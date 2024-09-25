@@ -17,7 +17,7 @@ const IMAGES = [
 
 export default function PortfolioSection() {
   return (
-    <section className="min-h-screen flex items-center">
+    <section id="portfolio" className="min-h-screen flex items-center">
       <div className="container py-20">
         <h1 className="text-4xl uppercase font-semibold">latest works</h1>
         <div className="my-3 border-[1px] border-teal-600 w-16" />
@@ -25,7 +25,7 @@ export default function PortfolioSection() {
           Front-End Developer based in Indonesia
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
           {IMAGES.map((img, idx) => (
             <div key={idx} className="overflow-hidden relative group">
               <Image

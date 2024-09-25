@@ -1,11 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
-import { HomeIcon } from "@/src/assets/icon/icon-sidebar";
-import { AboutIcon } from "@/src/assets/icon/icon-sidebar";
-import { ServiceIcon } from "@/src/assets/icon/icon-sidebar";
-import { PortfolioIcon } from "@/src/assets/icon/icon-sidebar";
-import { ExperienceIcon } from "@/src/assets/icon/icon-sidebar";
-import { ContactIcon } from "@/src/assets/icon/icon-sidebar";
+import {
+  HomeIcon,
+  AboutIcon,
+  ServiceIcon,
+  PortfolioIcon,
+  ExperienceIcon,
+  ContactIcon,
+} from "@/src/assets/icon/icon-sidebar";
+import Link from "next/link";
 // import NavbarDropdown from "./NavbarDropdown";
 
 const SIDEBAR_LINK = [
@@ -16,54 +19,58 @@ const SIDEBAR_LINK = [
   },
   {
     name: "About me",
-    link: "#",
+    link: "#about",
     icon: <AboutIcon />,
   },
   {
     name: "Service",
-    link: "#",
+    link: "#service",
     icon: <ServiceIcon />,
   },
   {
     name: "Portfolio",
-    link: "#",
+    link: "#portfolio",
     icon: <PortfolioIcon />,
   },
   {
     name: "Experience",
-    link: "#",
+    link: "#experience",
     icon: <ExperienceIcon />,
   },
   {
     name: "Contact",
-    link: "#",
+    link: "#contact",
     icon: <ContactIcon />,
   },
 ];
 
 export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrollPos, setScrollPos] = useState(0);
-
-  const handleOpen = () => setIsOpen((prev) => !prev);
-
-  const handleScrollPos = () => {
-    const currentScrollPos = window.scrollY;
-
-    if (currentScrollPos > scrollPos) {
-      setIsOpen(false);
-    }
-
-    setScrollPos(currentScrollPos);
-  };
+  const [activeLink, setActiveLink] = useState("");
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScrollPos);
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveLink(`#${entry.target.id}`);
+          }
+        });
+      },
+      { root: null, rootMargin: "0px", threshold: 0.6 }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
 
     return () => {
-      window.addEventListener("scroll", handleScrollPos);
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
     };
-  }, [scrollPos]);
+  }, []);
 
   return (
     <aside className="fixed hidden lg:block z-50">
@@ -77,16 +84,18 @@ export default function Sidebar() {
           {/* menu */}
           <div className="flex flex-col items-center text-black uppercase font-body w-full h-20">
             {SIDEBAR_LINK.map((link, idx) => (
-              <a
+              <Link
                 key={idx}
                 href={link.link}
-                className="nav-link border-b border-zinc-200 py-3 w-full text-center hover:text-teal-600"
+                className={`nav-link border-b border-zinc-200 py-3 w-full text-center hover:text-teal-600 ${
+                  activeLink === link.link ? "text-teal-600" : ""
+                }`}
               >
                 <div className="flex justify-center items-center mb-1">
                   {link.icon}
                 </div>
                 <span className="text-xs">{link.name}</span>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

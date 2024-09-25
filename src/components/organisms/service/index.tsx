@@ -46,7 +46,10 @@ const CARD_SERVICE = [
 
 export default function ServiceSection() {
   return (
-    <section className="bg-slate-200 min-h-screen flex items-center">
+    <section
+      id="service"
+      className="bg-slate-200 min-h-screen flex items-center"
+    >
       <div className="container py-20">
         <h1 className="text-4xl uppercase font-semibold">My Service</h1>
         <div className="my-3 border-[1px] border-teal-600 w-16" />
@@ -54,15 +57,20 @@ export default function ServiceSection() {
           Front-End Developer based in Indonesia
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           {CARD_SERVICE.map((card, idx) => (
-            <div key={idx} className="bg-white rounded-md p-8">
-              <div className="rounded-full p-4 border-dotted border-2 border-teal-600 text-teal-600 w-[86px]">
+            <div
+              key={idx}
+              className="cursor-default bg-white rounded-sm p-8 hover:bg-teal-500 hover:border-white hover:text-white transform hover:-translate-y-1.5 transition duration-300 ease-in-out group"
+            >
+              <div className="rounded-full p-4 border-dotted border-2 border-teal-600 text-teal-600 w-[86px] group-hover:border-white group-hover:text-white transition duration-300 ease-in-out">
                 {card.icon}
               </div>
 
               <p className="capitalize font-medium my-3">{card.title}</p>
-              <p className="font-normal text-zinc-500">{card.subtitle}</p>
+              <p className="font-normal text-zinc-500 group-hover:text-zinc-200">
+                {card.subtitle}
+              </p>
             </div>
           ))}
         </div>

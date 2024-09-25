@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const texts = ["Front-End Developer", "Full-Stack Developer"];
 
@@ -61,12 +62,18 @@ export default function HomeSection() {
           user interface flow chart based on container proportion.
         </p>
         <div className="flex gap-5">
-          <div className="bg-teal-600 hover:bg-teal-800 w-32 h-12 flex items-center justify-center">
+          <Link
+            href="#portfolio"
+            className="bg-teal-600 hover:bg-teal-800 w-32 h-12 flex items-center justify-center"
+          >
             <span className="uppercase text-white">my work</span>
-          </div>
-          <div className="border-2 border-teal-600 hover:bg-teal-600 text-teal-600 hover:text-white w-32 h-12 flex items-center justify-center">
+          </Link>
+          <Link
+            href="#contact"
+            className="border-2 border-teal-600 hover:bg-teal-600 text-teal-600 hover:text-white w-32 h-12 flex items-center justify-center"
+          >
             <span className="uppercase">hire me</span>
-          </div>
+          </Link>
         </div>
       </div>
     </section>

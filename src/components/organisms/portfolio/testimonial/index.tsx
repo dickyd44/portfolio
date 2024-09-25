@@ -1,7 +1,7 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import Profile from "@/src/assets/about/profile.jpeg";
+import Profile from "@/src/assets/testimonials/profile-testi.jpg";
 import "swiper/swiper-bundle.css";
 import Image from "next/image";
 
@@ -85,7 +85,7 @@ export default function TestimonialSection() {
                         alt={testimonial.name}
                         width={1000}
                         height={1000}
-                        className="object-cover rounded-full w-40 h-20 mr-5"
+                        className="object-cover rounded-full w-24 h-24 mr-5"
                       />
                       <div>
                         <p className="text-zinc-500">{testimonial.text}</p>
