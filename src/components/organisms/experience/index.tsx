@@ -32,7 +32,7 @@ const CARDS = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="container flex items-center py-28">
+    <section id="experience" className="flex items-center py-28">
       <div className="container">
         <h1 className="text-4xl uppercase font-semibold">experience</h1>
         <div className="my-3 border-[1px] border-teal-600 w-16" />
@@ -54,9 +54,9 @@ export default function ExperienceSection() {
                   height={1000}
                   className="object-cover object-top h-full group-hover:scale-105 transition-all duration-300 ease-in-out coursor-pointer"
                 />
-                <div className="h-[390px] md:h-[255px] lg:h-[280px] xl:h-[337px] absolute inset-0 bg-dark bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="h-full absolute inset-0 bg-dark bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex flex-col items-center justify-around h-full">
-                    <p className="text-xl capitalize font-semibold text-white mb-16">
+                    <p className="text-xl capitalize font-semibold text-white mb-10">
                       {card.company}
                     </p>
                   </div>

@@ -51,60 +51,56 @@ export default function TestimonialSection() {
   return (
     <section className="bg-slate-200 flex items-center py-28">
       <div className="container">
-        <div className="container">
-          <h1 className="text-4xl uppercase font-semibold">testimonials</h1>
-          <div className="my-3 border-[1px] border-teal-600 w-16" />
-          <p className="uppercase text-xl font-light text-zinc-500">
-            Front-End Developer based in Indonesia
-          </p>
+        <h1 className="text-4xl uppercase font-semibold">testimonials</h1>
+        <div className="my-3 border-[1px] border-teal-600 w-16" />
+        <p className="uppercase text-xl font-light text-zinc-500">
+          Front-End Developer based in Indonesia
+        </p>
 
-          <Swiper
-            spaceBetween={50}
-            slidesPerView={1} // Keep this for responsiveness
-            speed={1500}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            pagination={false}
-            loop={true}
-            modules={[Pagination, Autoplay]}
-            className="mySwiper mt-20"
-          >
-            {/* Create two columns for each slide */}
-            {Array.from({ length: slideCount }).map((_, index) => (
-              <SwiperSlide key={index}>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  {TESTIMONIALS.slice(index * 2, index * 2 + 2).map(
-                    (testimonial, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-start bg-white p-5 rounded-sm shadow-md border-[0.1px] border-teal-600"
-                      >
-                        <Image
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          width={1000}
-                          height={1000}
-                          className="object-cover rounded-full w-24 h-24 mr-5"
-                        />
-                        <div>
-                          <p className="text-zinc-500">{testimonial.text}</p>
-                          <h3 className="font-semibold mt-2">
-                            {testimonial.name}
-                          </h3>
-                          <p className="text-gray-500">
-                            {testimonial.position}
-                          </p>
-                        </div>
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={1} // Keep this for responsiveness
+          speed={1500}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          pagination={false}
+          loop={true}
+          modules={[Pagination, Autoplay]}
+          className="mySwiper mt-20"
+        >
+          {/* Create two columns for each slide */}
+          {Array.from({ length: slideCount }).map((_, index) => (
+            <SwiperSlide key={index}>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {TESTIMONIALS.slice(index * 2, index * 2 + 2).map(
+                  (testimonial, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-start bg-white p-5 rounded-sm shadow-md border-[0.1px] border-teal-600"
+                    >
+                      <Image
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        width={1000}
+                        height={1000}
+                        className="object-cover rounded-full w-24 h-24 mr-5"
+                      />
+                      <div>
+                        <p className="text-zinc-500">{testimonial.text}</p>
+                        <h3 className="font-semibold mt-2">
+                          {testimonial.name}
+                        </h3>
+                        <p className="text-gray-500">{testimonial.position}</p>
                       </div>
-                    )
-                  )}
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+                    </div>
+                  )
+                )}
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );

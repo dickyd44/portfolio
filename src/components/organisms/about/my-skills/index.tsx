@@ -21,7 +21,7 @@ export default function MySkillsSection() {
   return (
     <section className="container mx-auto py-24">
       {/* Skills Section */}
-      <div className="container flex flex-col xl:flex-row gap-10">
+      <div className="flex flex-col xl:flex-row gap-10">
         <div className="w-full">
           <h1 className="text-4xl uppercase font-semibold">My Skills</h1>
           <div className="my-3 border-[1px] border-teal-600 w-16" />
