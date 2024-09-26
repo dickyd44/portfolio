@@ -53,11 +53,12 @@ export default function Sidebar({ isOpen }: { isOpen: boolean }) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveLink(`#${entry.target.id}`);
+            const updatedLink = `#${entry.target.id}`;
+            setActiveLink(updatedLink);
           }
         });
       },
-      { root: null, rootMargin: "0px", threshold: 0.6 }
+      { root: null, rootMargin: "0px", threshold: 0.3 }
     );
 
     sections.forEach((section) => {

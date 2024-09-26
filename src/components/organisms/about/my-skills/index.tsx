@@ -21,8 +21,8 @@ export default function MySkillsSection() {
   return (
     <section className="container mx-auto py-24">
       {/* Skills Section */}
-      <div className="container flex flex-col lg:flex-row gap-10">
-        <div className="w-full lg:w-2/3">
+      <div className="container flex flex-col xl:flex-row gap-10">
+        <div className="w-full">
           <h1 className="text-4xl uppercase font-semibold">My Skills</h1>
           <div className="my-3 border-[1px] border-teal-600 w-16" />
           <p className="uppercase text-xl font-light text-zinc-500 mb-8">
@@ -47,7 +47,7 @@ export default function MySkillsSection() {
         </div>
 
         {/* Achievements Section */}
-        <div className="grid grid-cols-2 gap-4 w-full lg:w-1/2">
+        <div className="grid grid-cols-2 gap-4 w-full">
           {achievements.map((achievement, index) => (
             <div
               key={index}

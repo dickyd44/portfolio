@@ -40,7 +40,7 @@ export default function ExperienceSection() {
           Front-End Developer based in Indonesia
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-10">
           {CARDS.map((card, idx) => (
             <div
               key={idx}
@@ -54,10 +54,12 @@ export default function ExperienceSection() {
                   height={1000}
                   className="object-cover object-top h-full group-hover:scale-105 transition-all duration-300 ease-in-out coursor-pointer"
                 />
-                <div className="h-[337px] md:h-[255px] lg:h-[212px] xl:h-[337px] absolute inset-0 bg-dark bg-opacity-50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-xl capitalize font-semibold text-white mb-3">
-                    {card.company}
-                  </p>
+                <div className="h-[390px] md:h-[255px] lg:h-[280px] xl:h-[337px] absolute inset-0 bg-dark bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex flex-col items-center justify-around h-full">
+                    <p className="text-xl capitalize font-semibold text-white mb-16">
+                      {card.company}
+                    </p>
+                  </div>
                 </div>
 
                 <span className="absolute right-0 bottom-0 text-sm text-white bg-teal-600 px-4 py-2 rounded-sm">

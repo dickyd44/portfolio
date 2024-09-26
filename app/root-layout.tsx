@@ -1,5 +1,6 @@
 // RootLayout.tsx (Server Component)
 import "./globals.css";
+import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 
 const rubik = Rubik({
@@ -7,6 +8,11 @@ const rubik = Rubik({
   subsets: ["latin"],
   display: "swap",
 });
+
+export const metadata: Metadata = {
+  title: "Dicky Darmawan",
+  description: "Portfolio new using Next.JS",
+};
 
 // Server component that wraps the client layout
 export default function RootLayout({
@@ -17,10 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Dicky Darmawan</title>
-        <meta name="description" content="Portfolio using Next.JS" />
-        <body className={rubik.className}>{children}</body>
+        <title>{String(metadata.title)}</title>
+        <meta name="description" content={String(metadata.description)} />
       </head>
+      <body className={rubik.className}>{children}</body>
     </html>
   );
 }
