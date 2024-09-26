@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Blog1 from "@/src/assets/experience/blog-1.jpg";
 import Blog2 from "@/src/assets/experience/blog-2.jpg";
@@ -31,18 +33,70 @@ const CARDS = [
 ];
 
 export default function ExperienceSection() {
+  const appearsLeft = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, delay: 0.1 },
+    },
+    hidden: { opacity: 0, x: -100 },
+  };
+
+  const appearsTop = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, delay: 0.1 },
+    },
+    hidden: { opacity: 0, y: -100 },
+  };
+
+  const appearsBottom = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, delay: 0.1 },
+    },
+    hidden: { opacity: 0, y: 100 },
+  };
+
+  const appearsRight = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, delay: 0.1 },
+    },
+    hidden: { opacity: 0, x: 100 },
+  };
+
   return (
     <section id="experience" className="flex items-center py-28">
       <div className="container">
-        <h1 className="text-4xl uppercase font-semibold">experience</h1>
-        <div className="my-3 border-[1px] border-teal-600 w-16" />
-        <p className="uppercase text-xl font-light text-zinc-500">
-          Front-End Developer based in Indonesia
-        </p>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={appearsTop}
+          viewport={{ amount: 0 }}
+        >
+          <h1 className="text-4xl uppercase font-semibold">experience</h1>
+          <div className="my-3 border-[1px] border-teal-600 w-16" />
+          <p className="uppercase text-xl font-light text-zinc-500">
+            Front-End Developer based in Indonesia
+          </p>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-10">
           {CARDS.map((card, idx) => (
-            <div
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={
+                idx % 3 === 0
+                  ? appearsLeft
+                  : idx % 3 === 1
+                  ? appearsBottom
+                  : appearsRight
+              }
               key={idx}
               className="relative h-full pb-16 border border-slate-300 rounded-sm shadow"
             >
@@ -84,7 +138,7 @@ export default function ExperienceSection() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

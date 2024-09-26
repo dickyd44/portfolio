@@ -1,3 +1,4 @@
+"use client";
 import FormContact from "../../molecules/form-contact";
 import {
   LocationIcon,
@@ -10,6 +11,7 @@ import {
   InstagramIcon,
   FacebookIcon,
 } from "@/src/assets/icon/icon-sosmed";
+import { motion } from "framer-motion";
 
 const CONTACTS = [
   {
@@ -51,19 +53,66 @@ const SOCIAL_MEDIA = [
   },
 ];
 export default function ContactSection() {
+  const appearsLeft = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, delay: 0.1 },
+    },
+    hidden: { opacity: 0, x: -100 },
+  };
+
+  const appearsRight = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, delay: 0.1 },
+    },
+    hidden: { opacity: 0, x: 100 },
+  };
+
+  const appearsTop = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, delay: 0.1 },
+    },
+    hidden: { opacity: 0, y: -100 },
+  };
+
   return (
     <section id="contact" className="bg-slate-200 flex items-center py-28">
       <div className="container">
-        <h1 className="text-4xl uppercase font-semibold">get in touch</h1>
-        <div className="my-3 border-[1px] border-teal-600 w-16" />
-        <p className="uppercase text-xl font-light text-zinc-500">
-          Front-End Developer based in Indonesia
-        </p>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={appearsTop}
+          viewport={{ amount: 0 }}
+        >
+          <h1 className="text-4xl uppercase font-semibold">get in touch</h1>
+          <div className="my-3 border-[1px] border-teal-600 w-16" />
+          <p className="uppercase text-xl font-light text-zinc-500">
+            Front-End Developer based in Indonesia
+          </p>
+        </motion.div>
 
         <div className="w-full grid grid-cols-1 lg:grid-cols-3 lg:gap-6 gap-y-6 mt-10">
-          <FormContact />
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={appearsLeft}
+            viewport={{ amount: 0 }}
+            className="col-span-2"
+          >
+            <FormContact />
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={appearsRight}
+            viewport={{ amount: 0 }}
+          >
             {CONTACTS.map((contact, idx) => (
               <div key={idx} className="bg-white rounded-sm p-5 w-full mb-6">
                 <div className="flex items-start gap-4">
@@ -89,7 +138,7 @@ export default function ContactSection() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,7 +1,9 @@
+"use client";
 import { CompactDiscIcon } from "@/src/assets/icon/icon-skills";
 import { AwardIcon } from "@/src/assets/icon/icon-skills";
 import { CoffeeIcon } from "@/src/assets/icon/icon-skills";
 import { FlagIcon } from "@/src/assets/icon/icon-skills";
+import { motion } from "framer-motion";
 
 const skills = [
   { title: "Next.JS", percentage: 92 },
@@ -17,12 +19,36 @@ const achievements = [
   { icon: <FlagIcon />, title: "1 Countries Visited" },
 ];
 
+const appearsLeft = {
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, delay: 0.1 },
+  },
+  hidden: { opacity: 0, x: -100 },
+};
+
+const appearsRight = {
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, delay: 0.1 },
+  },
+  hidden: { opacity: 0, x: 100 },
+};
+
 export default function MySkillsSection() {
   return (
     <section className="container mx-auto py-24">
       {/* Skills Section */}
       <div className="flex flex-col xl:flex-row gap-10">
-        <div className="w-full">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={appearsLeft}
+          viewport={{ amount: 0 }}
+          className="w-full"
+        >
           <h1 className="text-4xl uppercase font-semibold">My Skills</h1>
           <div className="my-3 border-[1px] border-teal-600 w-16" />
           <p className="uppercase text-xl font-light text-zinc-500 mb-8">
@@ -44,10 +70,16 @@ export default function MySkillsSection() {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Achievements Section */}
-        <div className="grid grid-cols-2 gap-4 w-full">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={appearsRight}
+          viewport={{ amount: 0 }}
+          className="grid grid-cols-2 gap-4 w-full"
+        >
           {achievements.map((achievement, index) => (
             <div
               key={index}
@@ -59,7 +91,7 @@ export default function MySkillsSection() {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

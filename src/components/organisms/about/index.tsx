@@ -1,5 +1,7 @@
+"use client";
 import Profile from "@/src/assets/about/profile.jpeg";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const IDENTITY = [
   {
@@ -40,17 +42,48 @@ const ACCOUNT = [
 ];
 
 export default function AboutSection() {
+  const appearsLeft = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, delay: 0.1 },
+    },
+    hidden: { opacity: 0, x: -100 },
+  };
+
+  const appearsRight = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, delay: 0.1 },
+    },
+    hidden: { opacity: 0, x: 100 },
+  };
+
   return (
     <section id="about" className="bg-slate-200 min-h-screen flex items-center">
       <div className="container py-20">
-        <h1 className="text-4xl uppercase font-semibold">About Me</h1>
-        <div className="my-3 border-[1px] border-teal-600 w-16" />
-        <p className="uppercase text-xl font-light text-zinc-500">
-          Front-End Developer based in Indonesia
-        </p>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={appearsLeft}
+          viewport={{ amount: 0 }}
+        >
+          <h1 className="text-4xl uppercase font-semibold">About Me</h1>
+          <div className="my-3 border-[1px] border-teal-600 w-16" />
+          <p className="uppercase text-xl font-light text-zinc-500">
+            Front-End Developer based in Indonesia
+          </p>
+        </motion.div>
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 mt-10">
-          <div className="bg-white rounded-sm shadow-xl p-4 w-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={appearsLeft}
+            viewport={{ amount: 0 }}
+            className="bg-white rounded-sm shadow-xl p-4 w-auto"
+          >
             <Image
               src={Profile}
               alt="profile"
@@ -58,9 +91,14 @@ export default function AboutSection() {
               height={1000}
               className="object-cover object-right w-full h-[473px] rounded-sm"
             />
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={appearsRight}
+            viewport={{ amount: 0 }}
+          >
             <h2 className="text-4xl font-bold">I&apos;m Dicky Darmawan</h2>
             <h4 className="uppercase text-xl font-light py-5">
               a lead&nbsp;
@@ -110,7 +148,7 @@ export default function AboutSection() {
                 download cv
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

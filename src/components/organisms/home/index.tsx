@@ -37,8 +37,24 @@ export default function HomeSection() {
     return () => clearTimeout(letterTimeOut);
   }, [currentLetterIndex, currentTextIndex, isReversing]);
 
+  const appearsLeft = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, delay: 0.1 },
+    },
+    hidden: { opacity: 0, x: -100 },
+  };
+
   return (
-    <section id="home" className="container flex items-center min-h-screen">
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      variants={appearsLeft}
+      viewport={{ amount: 0 }}
+      id="home"
+      className="container flex items-center min-h-screen"
+    >
       <div className="flex flex-col justify-center space-y-4">
         <h4 className="text-xl md:text-2xl font-medium">Hello there...</h4>
         <h2 className="text-6xl md:text-7xl font-bold">Dicky Darmawan</h2>
@@ -76,6 +92,6 @@ export default function HomeSection() {
           </Link>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
