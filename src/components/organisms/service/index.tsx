@@ -1,11 +1,20 @@
 "use client";
-import { ComputerIcon } from "@/src/assets/icon/icon-service";
-import { TagsIcon } from "@/src/assets/icon/icon-service";
-import { ChatIcon } from "@/src/assets/icon/icon-service";
-import { DeviceIcon } from "@/src/assets/icon/icon-service";
-import { BowIcon } from "@/src/assets/icon/icon-service";
-import { ToolIcon } from "@/src/assets/icon/icon-service";
+import {
+  ComputerIcon,
+  TagsIcon,
+  ChatIcon,
+  DeviceIcon,
+  BowIcon,
+  ToolIcon,
+} from "@/src/assets/icon/icon-service";
 import { motion } from "framer-motion";
+import {
+  appearsLeft,
+  appearsRight,
+  appearsBottom,
+  appearsTop,
+  shakeEffect,
+} from "@/src/animation";
 
 const CARD_SERVICE = [
   {
@@ -47,48 +56,6 @@ const CARD_SERVICE = [
 ];
 
 export default function ServiceSection() {
-  const appearsLeft = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, x: -100 },
-  };
-
-  const appearsRight = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, x: 100 },
-  };
-
-  const appearsTop = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, y: -100 },
-  };
-
-  const appearsBottom = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, y: 100 },
-  };
-
-  const shakeEffect = {
-    scale: 1.05,
-    rotate: [0, -2, -2, -2, -2, 0],
-    transition: { type: "spring", stiffness: 300, damping: 5 },
-  };
-
   return (
     <section
       id="service"

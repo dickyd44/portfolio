@@ -12,6 +12,7 @@ import {
   FacebookIcon,
 } from "@/src/assets/icon/icon-sosmed";
 import { motion } from "framer-motion";
+import { appearsLeft, appearsRight, appearsTop } from "@/src/animation";
 
 const CONTACTS = [
   {
@@ -53,33 +54,6 @@ const SOCIAL_MEDIA = [
   },
 ];
 export default function ContactSection() {
-  const appearsLeft = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, x: -100 },
-  };
-
-  const appearsRight = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, x: 100 },
-  };
-
-  const appearsTop = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, y: -100 },
-  };
-
   return (
     <section id="contact" className="bg-slate-200 flex items-center py-28">
       <div className="container">

@@ -1,5 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
+import {
+  appearsLeft,
+  appearsRight,
+  appearsBottom,
+  appearsTop,
+} from "@/src/animation";
 import Image from "next/image";
 import Blog1 from "@/src/assets/experience/blog-1.jpg";
 import Blog2 from "@/src/assets/experience/blog-2.jpg";
@@ -33,42 +39,6 @@ const CARDS = [
 ];
 
 export default function ExperienceSection() {
-  const appearsLeft = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, x: -100 },
-  };
-
-  const appearsTop = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, y: -100 },
-  };
-
-  const appearsBottom = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, y: 100 },
-  };
-
-  const appearsRight = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, x: 100 },
-  };
-
   return (
     <section id="experience" className="flex items-center py-28">
       <div className="container">

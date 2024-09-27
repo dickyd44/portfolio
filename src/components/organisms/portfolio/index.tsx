@@ -8,6 +8,7 @@ import PortfolioImg6 from "@/src/assets/portfolio/portfolio-6.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { appearsLeft, appearsRight } from "@/src/animation";
 
 const IMAGES = [
   {
@@ -53,24 +54,6 @@ const IMAGES = [
 ];
 
 export default function PortfolioSection() {
-  const appearsLeft = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, x: -100 },
-  };
-
-  const appearsRight = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, x: 100 },
-  };
-
   return (
     <section id="portfolio" className="min-h-screen flex items-center">
       <div className="container py-20">

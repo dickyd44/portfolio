@@ -1,9 +1,12 @@
 "use client";
-import { CompactDiscIcon } from "@/src/assets/icon/icon-skills";
-import { AwardIcon } from "@/src/assets/icon/icon-skills";
-import { CoffeeIcon } from "@/src/assets/icon/icon-skills";
-import { FlagIcon } from "@/src/assets/icon/icon-skills";
+import {
+  CompactDiscIcon,
+  AwardIcon,
+  CoffeeIcon,
+  FlagIcon,
+} from "@/src/assets/icon/icon-skills";
 import { motion } from "framer-motion";
+import { appearsLeft, appearsRight } from "@/src/animation";
 
 const skills = [
   { title: "Next.JS", percentage: 92 },
@@ -18,24 +21,6 @@ const achievements = [
   { icon: <CoffeeIcon />, title: "3 Cups Per/Day Coffee" },
   { icon: <FlagIcon />, title: "1 Countries Visited" },
 ];
-
-const appearsLeft = {
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, delay: 0.1 },
-  },
-  hidden: { opacity: 0, x: -100 },
-};
-
-const appearsRight = {
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, delay: 0.1 },
-  },
-  hidden: { opacity: 0, x: 100 },
-};
 
 export default function MySkillsSection() {
   return (

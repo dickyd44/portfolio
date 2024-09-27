@@ -2,6 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
+import { appearsLeft, appearsRight } from "@/src/animation";
 import Profile from "@/src/assets/testimonials/profile-testi.jpg";
 import "swiper/swiper-bundle.css";
 import Image from "next/image";
@@ -48,24 +49,6 @@ const TESTIMONIALS = [
 
 export default function TestimonialSection() {
   const slideCount = Math.ceil(TESTIMONIALS.length / 2);
-
-  const appearsLeft = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, x: -100 },
-  };
-
-  const appearsRight = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, x: 100 },
-  };
 
   return (
     <section className="bg-slate-200 flex items-center py-28">

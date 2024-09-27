@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { appearsLeft } from "@/src/animation";
 import Link from "next/link";
 
 const texts = ["Front-End Developer", "Full-Stack Developer"];
@@ -36,15 +37,6 @@ export default function HomeSection() {
 
     return () => clearTimeout(letterTimeOut);
   }, [currentLetterIndex, currentTextIndex, isReversing]);
-
-  const appearsLeft = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, x: -100 },
-  };
 
   return (
     <motion.section

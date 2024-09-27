@@ -2,6 +2,7 @@
 import Profile from "@/src/assets/about/profile.jpeg";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { appearsLeft, appearsRight } from "@/src/animation";
 
 const IDENTITY = [
   {
@@ -42,24 +43,6 @@ const ACCOUNT = [
 ];
 
 export default function AboutSection() {
-  const appearsLeft = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, x: -100 },
-  };
-
-  const appearsRight = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7, delay: 0.1 },
-    },
-    hidden: { opacity: 0, x: 100 },
-  };
-
   return (
     <section id="about" className="bg-slate-200 min-h-screen flex items-center">
       <div className="container py-20">
