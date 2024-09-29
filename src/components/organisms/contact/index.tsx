@@ -13,6 +13,7 @@ import {
 } from "@/src/assets/icon/icon-sosmed";
 import { motion } from "framer-motion";
 import { appearsLeft, appearsRight, appearsTop } from "@/src/animation";
+import Link from "next/link";
 
 const CONTACTS = [
   {
@@ -38,19 +39,19 @@ const CONTACTS = [
 const SOCIAL_MEDIA = [
   {
     platform: <LinkedinIcon />,
-    link: "#",
+    link: "https://www.linkedin.com/in/dicky-darmawan-00b698275/",
   },
   {
     platform: <GithubIcon />,
-    link: "#",
+    link: "https://github.com/dickyd44",
   },
   {
     platform: <InstagramIcon />,
-    link: "#",
+    link: "https://www.instagram.com/dickythepaddy/",
   },
   {
     platform: <FacebookIcon />,
-    link: "#",
+    link: "https://www.facebook.com/profile.php?id=100095615464050",
   },
 ];
 export default function ContactSection() {
@@ -104,12 +105,14 @@ export default function ContactSection() {
             ))}
             <div className="flex justify-center items-start gap-4 bg-white p-5">
               {SOCIAL_MEDIA.map((sosmed, idx) => (
-                <div
+                <Link
+                  href={sosmed.link}
                   key={idx}
                   className="bg-teal-600 p-3 rounded-full text-white hover:bg-teal-700"
+                  target="_blank"
                 >
                   {sosmed.platform}
-                </div>
+                </Link>
               ))}
             </div>
           </motion.div>

@@ -1,16 +1,44 @@
-import React from "react";
+import { useRef } from "react";
+import emailjs from "emailjs-com";
 
 export default function FormContact() {
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "service_d1lzfcb", // Service ID
+          "template_rg4s3im", // Template ID
+          form.current,
+          "aKIX-3Gpi_A3h1UFG" // PUBLIC KEY
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            alert("Message sent successfully!");
+          },
+          (error) => {
+            console.log(error.text);
+            alert("Failed to send message. Please try again.");
+          }
+        );
+
+      form.current.reset();
+    }
+  };
   return (
     <div className="bg-white rounded-sm p-7 h-full flex flex-col justify-between">
       <h2 className="text-xl font-semibold mb-4 p-2">SAY SOMETHING</h2>
-      <form action="#" method="POST" className="flex-grow flex flex-col">
+      <form ref={form} onSubmit={sendEmail} className="flex-grow flex flex-col">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="flex flex-col">
             <input
               type="text"
               id="name"
-              name="name"
+              name="form_name"
               placeholder="Name *"
               required
               className="mt-1 p-2 border-b border-slate-300 text-slate-500 focus:outline-none"
@@ -20,7 +48,7 @@ export default function FormContact() {
             <input
               type="email"
               id="email"
-              name="email"
+              name="reply_to"
               placeholder="Email *"
               required
               className="mt-1 p-2 border-b border-slate-300 text-slate-500 focus:outline-none"

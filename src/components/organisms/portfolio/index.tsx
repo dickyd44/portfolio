@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { appearsLeft, appearsRight } from "@/src/animation";
+import { useState } from "react";
 
 const IMAGES = [
   {
@@ -54,6 +55,10 @@ const IMAGES = [
 ];
 
 export default function PortfolioSection() {
+  const [showMore, setShowMore] = useState(false);
+
+  const displayImages = showMore ? IMAGES : IMAGES.slice(0, 4);
+
   return (
     <section id="portfolio" className="min-h-screen flex items-center">
       <div className="container py-20">
@@ -71,7 +76,7 @@ export default function PortfolioSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-10">
-          {IMAGES.map((img, idx) => (
+          {displayImages.map((img, idx) => (
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -99,6 +104,15 @@ export default function PortfolioSection() {
               </Link>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <button
+            className="px-5 py-2 bg-teal-600 text-white rounded-sm hover:bg-teal-700 transition-all"
+            onClick={() => setShowMore(!showMore)}
+          >
+            {showMore ? "See Less" : "See More"}
+          </button>
         </div>
       </div>
     </section>
