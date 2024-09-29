@@ -10,35 +10,51 @@ import Image from "next/image";
 import Blog1 from "@/src/assets/experience/blog-1.jpg";
 import Blog2 from "@/src/assets/experience/blog-2.jpg";
 import Blog3 from "@/src/assets/experience/blog-3.jpg";
+import { useState } from "react";
 
 const CARDS = [
   {
     photo: Blog1,
     date: "01 Mar 2024",
     company: "b one consulting",
-    label: "Junior Front-End Developer",
-    title: "Making the website landing pages",
-    subtitle: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    label: "junior front-end developer",
+    title: "making the website landing pages",
+    subtitle:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit",
   },
   {
     photo: Blog2,
-    date: "02 Mar 2023",
-    company: "b one consulting",
-    label: "Junior Front-End Developer",
-    title: "Making the website landing pages",
-    subtitle: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    date: "02 June 2022",
+    company: "pt. total print indonesia",
+    label: "technician engineer",
+    title: "service machine photocopy",
+    subtitle:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit",
   },
   {
     photo: Blog3,
-    date: "02 Mar 2023",
-    company: "b one consulting",
-    label: "Junior Front-End Developer",
-    title: "Making the website landing pages",
-    subtitle: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    date: "03 August 2023",
+    company: "family coffee",
+    label: "barista",
+    title: "service customer making good coffee",
+    subtitle:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit",
   },
 ];
 
 export default function ExperienceSection() {
+  const [expandedIndex, setExpandedIndex] = useState(
+    Array(CARDS.length).fill(false)
+  );
+
+  const toggleExpanded = (idx: number) => {
+    setExpandedIndex((prev) => {
+      const newExpanded = [...prev];
+      newExpanded[idx] = !newExpanded[idx];
+      return newExpanded;
+    });
+  };
+
   return (
     <section id="experience" className="flex items-center py-28">
       <div className="container">
@@ -92,18 +108,31 @@ export default function ExperienceSection() {
               </div>
 
               <div className="p-5 h-auto flex flex-col justify-center items-start">
-                <span className="text-xs text-zinc-600 border border-zinc-500 px-3 py-1 rounded-sm">
+                <span className="text-xs capitalize text-zinc-600 border border-zinc-500 px-3 py-1 rounded-sm">
                   {card.label}
                 </span>
 
-                <p className="text-lg font-semibold mt-3">{card.title}</p>
-                <p className="capitalized truncate w-full text-sm text-slate-400 mt-3">
-                  {card.subtitle}
+                <p className="text-lg capitalize font-semibold mt-3">
+                  {card.title}
                 </p>
+
+                <p
+                  className={`capitalized w-full text-sm text-slate-400 mt-3 ${
+                    expandedIndex[idx] ? "" : "truncate"
+                  }`}
+                >
+                  {expandedIndex[idx]
+                    ? card.subtitle
+                    : `${card.subtitle.substring(0, 150)}...`}
+                </p>
+
                 <div className="absolute bottom-5">
                   <div className="text-sm w-32 h-10 border border-slate-300 hover:bg-teal-600 transition-colors duration-300 hover:text-white cursor-pointer shadow mt-3">
-                    <div className="flex justify-center items-center h-full capitalize">
-                      read more
+                    <div
+                      onClick={() => toggleExpanded(idx)}
+                      className="flex justify-center items-center h-full capitalize"
+                    >
+                      {expandedIndex[idx] ? "read less" : "read more"}
                     </div>
                   </div>
                 </div>
