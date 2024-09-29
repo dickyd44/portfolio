@@ -8,19 +8,25 @@ import TestimonialSection from "@/src/components/organisms/portfolio/testimonial
 import ExperienceSection from "@/src/components/organisms/experience";
 import ContactSection from "@/src/components/organisms/contact";
 import { ChevronTopIcon } from "@/src/assets/icon/icon-main";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
+  const homeRef = useRef<HTMLDivElement | null>(null);
 
   // Function to show/hide the button based on scroll position
   const handleScroll = () => {
-    setIsVisible(window.scrollY > 20);
+    if (window.scrollY > 100) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
   };
 
-  // Function to scroll to the top
-  const topFunction = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollToTop = () => {
+    if (homeRef.current) {
+      homeRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   useEffect(() => {
@@ -28,10 +34,10 @@ export default function Home() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isVisible, topFunction]);
+  }, []);
 
   return (
-    <main className="w-full">
+    <main ref={homeRef} className="w-full">
       <HomeSection />
       <AboutSection />
       <MySkillsSection />
@@ -43,7 +49,7 @@ export default function Home() {
 
       {isVisible && (
         <button
-          onClick={topFunction}
+          onClick={scrollToTop}
           className="fixed bottom-8 right-8 p-2.5 bg-teal-600 text-white rounded-full shadow-lg hover:bg-teal-700 transition duration-300 z-[9999]"
         >
           <ChevronTopIcon />
