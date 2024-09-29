@@ -14,7 +14,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <RootLayout>
       <div className="flex">
         <AppSidebar isOpen={isSidebarOpen} />
-        <div className="flex-col w-full lg:ml-24 overflow-auto">
+        <div className="flex-col w-full lg:ml-24 overflow-hidden">
           <AppNavbar toggleSidebar={toggleSidebar} />
           {children}
           <AppFooter />

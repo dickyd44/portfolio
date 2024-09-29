@@ -34,11 +34,11 @@ const ACCOUNT = [
   },
   {
     title: "github",
-    subtitle: "dickyd44",
+    subtitle: "@dickyd44",
   },
   {
     title: "freelance",
-    subtitle: "available",
+    subtitle: "Available",
   },
 ];
 
@@ -118,7 +118,7 @@ export default function AboutSection() {
                       {account.title}
                     </div>
 
-                    <div className="pl-4 text-zinc-500 capitalize border-l border-zinc-400 text-sm md:text-base xl:text-xs 2xl:text-sm">
+                    <div className="pl-4 text-zinc-500 border-l border-zinc-400 text-sm md:text-base xl:text-xs 2xl:text-sm">
                       {account.subtitle}
                     </div>
                   </div>

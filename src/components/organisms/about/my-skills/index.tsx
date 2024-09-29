@@ -19,7 +19,7 @@ const achievements = [
   { icon: <CompactDiscIcon />, title: "80 Albums Listened" },
   { icon: <AwardIcon />, title: "1 Real-Projects Finished" },
   { icon: <CoffeeIcon />, title: "3 Cups Per/Day Coffee" },
-  { icon: <FlagIcon />, title: "1 Countries Visited" },
+  { icon: <FlagIcon />, title: "1 Cities Visited" },
 ];
 
 export default function MySkillsSection() {

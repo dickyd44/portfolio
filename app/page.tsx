@@ -8,31 +8,30 @@ import TestimonialSection from "@/src/components/organisms/portfolio/testimonial
 import ExperienceSection from "@/src/components/organisms/experience";
 import ContactSection from "@/src/components/organisms/contact";
 import { ChevronTopIcon } from "@/src/assets/icon/icon-main";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [showChevron, setShowChevron] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Function to show/hide the button based on scroll position
+  const handleScroll = () => {
+    setIsVisible(window.scrollY > 20);
+  };
+
+  // Function to scroll to the top
+  const topFunction = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const homeSection = document.getElementById("home");
-      if (!homeSection) return;
-      const homeSectionBottom =
-        homeSection.offsetTop + homeSection.offsetHeight;
-
-      setShowChevron(window.scrollY > homeSectionBottom);
-    };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isVisible, topFunction]);
 
   return (
-    <main className="relative w-full">
+    <main className="w-full">
       <HomeSection />
       <AboutSection />
       <MySkillsSection />
@@ -42,13 +41,13 @@ export default function Home() {
       <ExperienceSection />
       <ContactSection />
 
-      {showChevron && (
-        <Link
-          href="/"
-          className="fixed bottom-8 right-8 p-2.5 bg-teal-600 text-white rounded-full shadow-lg hover:bg-teal-700 transition duration-300 z-50"
+      {isVisible && (
+        <button
+          onClick={topFunction}
+          className="fixed bottom-8 right-8 p-2.5 bg-teal-600 text-white rounded-full shadow-lg hover:bg-teal-700 transition duration-300 z-[9999]"
         >
           <ChevronTopIcon />
-        </Link>
+        </button>
       )}
     </main>
   );
