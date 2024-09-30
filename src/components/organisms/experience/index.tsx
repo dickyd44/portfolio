@@ -18,14 +18,14 @@ const CARDS = [
     photo: BOneConsulting,
     date: "01 Mar 2024",
     company: "b one consulting",
-    label: "junior front-end developer",
+    label: "front-end developer",
     title: "making the website landing pages",
     subtitle:
       "For 6 months, I worked on a website project, namely Bali Smart Investment, and where I made it page by page, starting from home, services and so on.",
   },
   {
     photo: TotalPrint,
-    date: "02 June 2022",
+    date: "01 April 2021",
     company: "pt. total print indonesia",
     label: "technician engineer",
     title: "service machine photocopy",
@@ -34,7 +34,7 @@ const CARDS = [
   },
   {
     photo: FamilyCoffee,
-    date: "03 August 2023",
+    date: "03 March 2022",
     company: "family coffee",
     label: "barista",
     title: "service customer making good coffee",

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { appearsLeft, appearsRight } from "@/src/animation";
 import { RoleText } from "../../atoms/role-text";
+import Link from "next/link";
 
 const IDENTITY = [
   {
@@ -129,9 +130,13 @@ export default function AboutSection() {
             </div>
 
             <div className="flex justify-center md:justify-start items-center mt-14 xl:mt-10">
-              <div className="uppercase bg-teal-600 text-white w-40 h-12 flex justify-center items-center">
-                download cv
-              </div>
+              <Link
+                href="/Resume_Dicky Darmawan.pdf"
+                target="_blank"
+                className="uppercase bg-teal-600 hover:bg-teal-700 text-white w-40 h-12 flex justify-center items-center"
+              >
+                review cv
+              </Link>
             </div>
           </motion.div>
         </div>
