@@ -6,42 +6,43 @@ import { appearsLeft, appearsRight } from "@/src/animation";
 import Profile from "@/src/assets/testimonials/profile-testi.jpg";
 import "swiper/swiper-bundle.css";
 import Image from "next/image";
+import { RoleText } from "@/src/components/atoms/role-text";
 
 const TESTIMONIALS = [
   {
     image: Profile,
-    name: "Nancy Bayers",
-    position: "Co-founder",
+    name: "Not Found",
+    position: "There's not yet",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
   },
   {
     image: Profile,
-    name: "Nancy Bayers",
-    position: "Co-founder",
+    name: "Not Found",
+    position: "There's not yet",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
   },
   {
     image: Profile,
-    name: "Nancy Bayers",
-    position: "Co-founder",
+    name: "Not Found",
+    position: "There's not yet",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
   },
   {
     image: Profile,
-    name: "Nancy Bayers",
-    position: "Co-founder",
+    name: "Not Found",
+    position: "There's not yet",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
   },
   {
     image: Profile,
-    name: "Nancy Bayers",
-    position: "Co-founder",
+    name: "Not Found",
+    position: "There's not yet",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
   },
   {
     image: Profile,
-    name: "Nancy Bayers",
-    position: "Co-founder",
+    name: "Not Found",
+    position: "There's not yet",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
   },
   // Add more testimonials as needed
@@ -61,9 +62,10 @@ export default function TestimonialSection() {
         >
           <h1 className="text-4xl uppercase font-semibold">testimonials</h1>
           <div className="my-3 border-[1px] border-teal-600 w-16" />
-          <p className="uppercase text-xl font-light text-zinc-500">
-            Front-End Developer based in Indonesia
-          </p>
+          <RoleText
+            text="front-end developer based in indonesia"
+            className="mb-20"
+          />
         </motion.div>
 
         <motion.div
@@ -83,7 +85,7 @@ export default function TestimonialSection() {
             pagination={false}
             loop={true}
             modules={[Pagination, Autoplay]}
-            className="mySwiper mt-20"
+            className="mySwiper"
           >
             {/* Create two columns for each slide */}
             {Array.from({ length: slideCount }).map((_, index) => (

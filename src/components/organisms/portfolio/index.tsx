@@ -8,8 +8,9 @@ import PortfolioImg6 from "@/src/assets/portfolio/portfolio-6.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { appearsLeft, appearsRight } from "@/src/animation";
+import { appearsBottom, appearsLeft, appearsRight } from "@/src/animation";
 import { useState } from "react";
+import { RoleText } from "../../atoms/role-text";
 
 const IMAGES = [
   {
@@ -70,12 +71,13 @@ export default function PortfolioSection() {
         >
           <h1 className="text-4xl uppercase font-semibold">latest works</h1>
           <div className="my-3 border-[1px] border-teal-600 w-16" />
-          <p className="uppercase text-xl font-light text-zinc-500">
-            Front-End Developer based in Indonesia
-          </p>
+          <RoleText
+            text="front-end developer based in indonesia"
+            className="mb-10"
+          />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {displayImages.map((img, idx) => (
             <motion.div
               initial="hidden"
@@ -106,14 +108,20 @@ export default function PortfolioSection() {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={appearsBottom}
+          viewport={{ amount: 0 }}
+          className="mt-16 text-center"
+        >
           <button
             className="px-5 py-2 bg-teal-600 text-white rounded-sm hover:bg-teal-700 transition-all"
             onClick={() => setShowMore(!showMore)}
           >
             {showMore ? "See Less" : "See More"}
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

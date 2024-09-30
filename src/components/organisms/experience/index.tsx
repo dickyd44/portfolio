@@ -7,38 +7,39 @@ import {
   appearsTop,
 } from "@/src/animation";
 import Image from "next/image";
-import Blog1 from "@/src/assets/experience/blog-1.jpg";
-import Blog2 from "@/src/assets/experience/blog-2.jpg";
-import Blog3 from "@/src/assets/experience/blog-3.jpg";
+import BOneConsulting from "@/src/assets/experience/b-one.jpeg";
+import TotalPrint from "@/src/assets/experience/total-print.jpg";
+import FamilyCoffee from "@/src/assets/experience/barista.jpg";
 import { useState } from "react";
+import { RoleText } from "../../atoms/role-text";
 
 const CARDS = [
   {
-    photo: Blog1,
+    photo: BOneConsulting,
     date: "01 Mar 2024",
     company: "b one consulting",
     label: "junior front-end developer",
     title: "making the website landing pages",
     subtitle:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+      "For 6 months, I worked on a website project, namely Bali Smart Investment, and where I made it page by page, starting from home, services and so on.",
   },
   {
-    photo: Blog2,
+    photo: TotalPrint,
     date: "02 June 2022",
     company: "pt. total print indonesia",
     label: "technician engineer",
     title: "service machine photocopy",
     subtitle:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+      "For one year I worked as a technician engineer, that is, every day I serviced the client's photocopier machine if there was a problem then after completing repairs, I reported it to the admin.",
   },
   {
-    photo: Blog3,
+    photo: FamilyCoffee,
     date: "03 August 2023",
     company: "family coffee",
     label: "barista",
     title: "service customer making good coffee",
     subtitle:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+      "During the 7 months I was a barista, I learned a lot there how to brew coffee properly and correctly, and there were also many things I could learn there.",
   },
 ];
 
@@ -66,12 +67,13 @@ export default function ExperienceSection() {
         >
           <h1 className="text-4xl uppercase font-semibold">experience</h1>
           <div className="my-3 border-[1px] border-teal-600 w-16" />
-          <p className="uppercase text-xl font-light text-zinc-500">
-            Front-End Developer based in Indonesia
-          </p>
+          <RoleText
+            text="front-end developer based in indonesia"
+            className="mb-10"
+          />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           {CARDS.map((card, idx) => (
             <motion.div
               initial="hidden"
@@ -116,14 +118,10 @@ export default function ExperienceSection() {
                   {card.title}
                 </p>
 
-                <p
-                  className={`capitalized w-full text-sm text-slate-400 mt-3 ${
-                    expandedIndex[idx] ? "" : "truncate"
-                  }`}
-                >
+                <p className="capitalized w-full text-sm text-slate-400 mt-3">
                   {expandedIndex[idx]
                     ? card.subtitle
-                    : `${card.subtitle.substring(0, 150)}...`}
+                    : `${card.subtitle.substring(0, 50)}...`}
                 </p>
 
                 <div className="absolute bottom-5">

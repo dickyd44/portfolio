@@ -7,6 +7,7 @@ import {
 } from "@/src/assets/icon/icon-skills";
 import { motion } from "framer-motion";
 import { appearsLeft, appearsRight } from "@/src/animation";
+import { RoleText } from "@/src/components/atoms/role-text";
 
 const skills = [
   { title: "Next.JS", percentage: 92 },
@@ -36,9 +37,10 @@ export default function MySkillsSection() {
         >
           <h1 className="text-4xl uppercase font-semibold">My Skills</h1>
           <div className="my-3 border-[1px] border-teal-600 w-16" />
-          <p className="uppercase text-xl font-light text-zinc-500 mb-8">
-            a lead Front-End Developer based in Indonesia
-          </p>
+          <RoleText
+            text="front-end developer based in indonesia"
+            className="mb-8"
+          />
           {skills.map((skill, index) => (
             <div key={index} className="mb-4">
               <div className="flex justify-between mb-1.5">

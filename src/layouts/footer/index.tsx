@@ -6,7 +6,9 @@ export default function Footer() {
       <div className="container py-10">
         <div className="text-zinc-400 flex flex-col md:flex-row justify-around">
           <p>Designed by Dicky Darmawan</p>
-          <p className="capitalize">© 2024 copyright all right reserved</p>
+          <p className="capitalize">
+            © {new Date().getFullYear()} copyright all right reserved
+          </p>
         </div>
       </div>
     </section>

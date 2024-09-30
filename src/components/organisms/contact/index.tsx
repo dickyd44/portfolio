@@ -14,6 +14,7 @@ import {
 import { motion } from "framer-motion";
 import { appearsLeft, appearsRight, appearsTop } from "@/src/animation";
 import Link from "next/link";
+import { RoleText } from "../../atoms/role-text";
 
 const CONTACTS = [
   {
@@ -66,12 +67,13 @@ export default function ContactSection() {
         >
           <h1 className="text-4xl uppercase font-semibold">get in touch</h1>
           <div className="my-3 border-[1px] border-teal-600 w-16" />
-          <p className="uppercase text-xl font-light text-zinc-500">
-            Front-End Developer based in Indonesia
-          </p>
+          <RoleText
+            text="front-end developer based in indonesia"
+            className="mb-10"
+          />
         </motion.div>
 
-        <div className="w-full grid grid-cols-1 lg:grid-cols-3 lg:gap-6 gap-y-6 mt-10">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-3 lg:gap-6 gap-y-6">
           <motion.div
             initial="hidden"
             whileInView="visible"

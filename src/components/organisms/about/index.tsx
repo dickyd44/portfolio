@@ -3,6 +3,7 @@ import Profile from "@/src/assets/about/profile.jpeg";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { appearsLeft, appearsRight } from "@/src/animation";
+import { RoleText } from "../../atoms/role-text";
 
 const IDENTITY = [
   {
@@ -54,12 +55,13 @@ export default function AboutSection() {
         >
           <h1 className="text-4xl uppercase font-semibold">About Me</h1>
           <div className="my-3 border-[1px] border-teal-600 w-16" />
-          <p className="uppercase text-xl font-light text-zinc-500">
-            Front-End Developer based in Indonesia
-          </p>
+          <RoleText
+            text="front-end developer based in indonesia"
+            className="mb-10"
+          />
         </motion.div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 mt-10">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
