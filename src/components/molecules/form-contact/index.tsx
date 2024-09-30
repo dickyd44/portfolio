@@ -38,7 +38,7 @@ export default function FormContact() {
             <input
               type="text"
               id="name"
-              name="form_name"
+              name="from_name"
               placeholder="Name *"
               required
               className="mt-1 p-2 border-b border-slate-300 text-slate-500 focus:outline-none"
