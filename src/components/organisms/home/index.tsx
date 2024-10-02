@@ -67,7 +67,7 @@ export default function HomeSection() {
         <p className="text-base text-zinc-500">
           The dynamics of how users interact with interactive elements within a{" "}
           <br />
-          user interface flow chart based on container proportion.
+          user interface layout based on container proportion.
         </p>
         <div className="flex gap-5">
           <Link

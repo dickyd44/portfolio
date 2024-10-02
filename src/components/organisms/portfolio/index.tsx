@@ -99,7 +99,7 @@ export default function PortfolioSection() {
                   <p className="capitalize text-xl font-semibold text-white mb-3">
                     {img.project}
                   </p>
-                  <p className="text-white text-center mx-5">
+                  <p className="text-white text-center mx-5 text-sm lg:text-base">
                     {img.description}
                   </p>
                 </div>

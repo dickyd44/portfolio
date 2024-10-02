@@ -115,7 +115,7 @@ export default function ServiceSection() {
                 <p className="font-normal text-sm text-zinc-600 group-hover:text-zinc-200">
                   {truncatedIndex[idx]
                     ? card.subtitle
-                    : `${card.subtitle.substring(0, 150)}...`}
+                    : `${card.subtitle.substring(0, 141)}...`}
                 </p>
                 <span
                   onClick={() => toggleTruncated(idx)}
