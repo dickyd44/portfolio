@@ -7,8 +7,8 @@ import {
   appearsTop,
 } from "@/src/animation";
 import Image from "next/image";
-import BOneConsulting from "@/src/assets/experience/b-one.jpeg";
-import TotalPrint from "@/src/assets/experience/total-print.jpg";
+import BOneConsulting from "@/src/assets/experience/front-end.jpg";
+import TotalPrint from "@/src/assets/experience/technician.png";
 import FamilyCoffee from "@/src/assets/experience/barista.jpg";
 import { useState } from "react";
 import { RoleText } from "../../atoms/role-text";
@@ -94,7 +94,7 @@ export default function ExperienceSection() {
                   alt="news-10"
                   width={1000}
                   height={1000}
-                  className="object-cover object-top h-full group-hover:scale-105 transition-all duration-300 ease-in-out coursor-pointer"
+                  className="object-cover object-top h-[20rem] md:h-[16rem] lg:h-[20rem] xl:h-[16rem] 2xl:h-[20rem] group-hover:scale-105 transition-all duration-300 ease-in-out coursor-pointer"
                 />
                 <div className="h-full absolute inset-0 bg-dark bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex flex-col items-center justify-around h-full">
