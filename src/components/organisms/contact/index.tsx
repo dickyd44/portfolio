@@ -1,60 +1,12 @@
 "use client";
 import FormContact from "../../molecules/form-contact";
-import {
-  LocationIcon,
-  PhoneIcon,
-  EmailIcon,
-} from "@/src/assets/icon/icon-contact";
-import {
-  LinkedinIcon,
-  GithubIcon,
-  InstagramIcon,
-  FacebookIcon,
-} from "@/src/assets/icon/icon-sosmed";
+import { CONTACTS, SOCIAL_MEDIA } from "@/src/constants/contact";
 import { motion } from "framer-motion";
 import { appearsLeft, appearsRight, appearsTop } from "@/src/animation";
 import Link from "next/link";
 import { RoleText } from "../../atoms/role-text";
+import React from "react";
 
-const CONTACTS = [
-  {
-    icon: <LocationIcon />,
-    title: "Our Address",
-    core_title: "Address",
-    subtitle: "Tiban Indah Mc-Dermott Blok K.20",
-  },
-  {
-    icon: <PhoneIcon />,
-    title: "Our Phone",
-    core_title: "Phone",
-    subtitle: "+62 877-7359-2720",
-  },
-  {
-    icon: <EmailIcon />,
-    title: "Our Email",
-    core_title: "Email",
-    subtitle: "dickytwillio@gmail.com",
-  },
-];
-
-const SOCIAL_MEDIA = [
-  {
-    platform: <LinkedinIcon />,
-    link: "https://www.linkedin.com/in/dicky-darmawan-00b698275/",
-  },
-  {
-    platform: <GithubIcon />,
-    link: "https://github.com/dickyd44",
-  },
-  {
-    platform: <InstagramIcon />,
-    link: "https://www.instagram.com/dickythepaddy/",
-  },
-  {
-    platform: <FacebookIcon />,
-    link: "https://www.facebook.com/profile.php?id=100095615464050",
-  },
-];
 export default function ContactSection() {
   return (
     <section id="contact" className="bg-slate-200 flex items-center py-28">
@@ -94,7 +46,7 @@ export default function ContactSection() {
               <div key={idx} className="bg-white rounded-sm p-5 w-full mb-6">
                 <div className="flex items-start gap-4">
                   <div className="bg-teal-600 p-3 rounded-full text-white">
-                    {contact.icon}
+                    {React.createElement(contact.icon)}
                   </div>
                   <div>
                     <p className="font-medium mb-2">{contact.title}</p>
@@ -113,7 +65,7 @@ export default function ContactSection() {
                   className="bg-teal-600 p-3 rounded-full text-white hover:bg-teal-700"
                   target="_blank"
                 >
-                  {sosmed.platform}
+                  {React.createElement(sosmed.platform)}
                 </Link>
               ))}
             </div>

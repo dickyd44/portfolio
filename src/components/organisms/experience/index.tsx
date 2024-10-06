@@ -7,45 +7,13 @@ import {
   appearsTop,
 } from "@/src/animation";
 import Image from "next/image";
-import BOneConsulting from "@/src/assets/experience/front-end.jpg";
-import TotalPrint from "@/src/assets/experience/technician.png";
-import FamilyCoffee from "@/src/assets/experience/barista.jpg";
+import { EXPERIENCE } from "@/src/constants/experience";
 import { useState } from "react";
 import { RoleText } from "../../atoms/role-text";
 
-const CARDS = [
-  {
-    photo: BOneConsulting,
-    date: "01 Mar 2024",
-    company: "b one consulting",
-    label: "front-end developer",
-    title: "making the website landing pages",
-    subtitle:
-      "For 6 months, I worked on a website project, namely Bali Smart Investment, and where I made it page by page, starting from home, services and so on.",
-  },
-  {
-    photo: TotalPrint,
-    date: "01 April 2021",
-    company: "pt. total print indonesia",
-    label: "technician engineer",
-    title: "service machine photocopy",
-    subtitle:
-      "For one year I worked as a technician engineer, that is, every day I serviced the client's photocopier machine if there was a problem then after completing repairs, I reported it to the admin.",
-  },
-  {
-    photo: FamilyCoffee,
-    date: "03 March 2022",
-    company: "family coffee",
-    label: "barista",
-    title: "service customer making good coffee",
-    subtitle:
-      "During the 7 months I was a barista, I learned a lot there how to brew coffee properly and correctly, and there were also many things I could learn there.",
-  },
-];
-
 export default function ExperienceSection() {
   const [expandedIndex, setExpandedIndex] = useState(
-    Array(CARDS.length).fill(false)
+    Array(EXPERIENCE.length).fill(false)
   );
 
   const toggleExpanded = (idx: number) => {
@@ -74,7 +42,7 @@ export default function ExperienceSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-          {CARDS.map((card, idx) => (
+          {EXPERIENCE.map((experience, idx) => (
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -90,7 +58,7 @@ export default function ExperienceSection() {
             >
               <div className="relative w-full overflow-hidden group">
                 <Image
-                  src={card.photo}
+                  src={experience.photo}
                   alt="news-10"
                   width={1000}
                   height={1000}
@@ -99,29 +67,29 @@ export default function ExperienceSection() {
                 <div className="h-full absolute inset-0 bg-dark bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex flex-col items-center justify-around h-full">
                     <p className="text-xl capitalize font-semibold text-white mb-10">
-                      {card.company}
+                      {experience.company}
                     </p>
                   </div>
                 </div>
 
                 <span className="absolute right-0 bottom-0 text-sm text-white bg-teal-600 px-4 py-2 rounded-sm">
-                  {card.date}
+                  {experience.date}
                 </span>
               </div>
 
               <div className="p-5 h-auto flex flex-col justify-center items-start">
                 <span className="text-xs capitalize text-zinc-600 border border-zinc-500 px-3 py-1 rounded-sm">
-                  {card.label}
+                  {experience.label}
                 </span>
 
                 <p className="text-lg capitalize font-semibold mt-3">
-                  {card.title}
+                  {experience.title}
                 </p>
 
                 <p className="capitalized w-full text-sm text-slate-400 mt-3">
                   {expandedIndex[idx]
-                    ? card.subtitle
-                    : `${card.subtitle.substring(0, 50)}...`}
+                    ? experience.subtitle
+                    : `${experience.subtitle.substring(0, 50)}...`}
                 </p>
 
                 <div className="absolute bottom-5">

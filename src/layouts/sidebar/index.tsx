@@ -1,47 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
-import {
-  HomeIcon,
-  AboutIcon,
-  ServiceIcon,
-  PortfolioIcon,
-  ExperienceIcon,
-  ContactIcon,
-} from "@/src/assets/icon/icon-sidebar";
+import React, { useEffect, useState } from "react";
+import { SIDEBAR_LINK } from "@/src/constants/layouts/sidebar";
 import Link from "next/link";
-
-const SIDEBAR_LINK = [
-  {
-    name: "Home",
-    link: "#home",
-    icon: <HomeIcon />,
-  },
-  {
-    name: "About me",
-    link: "#about",
-    icon: <AboutIcon />,
-  },
-  {
-    name: "Service",
-    link: "#service",
-    icon: <ServiceIcon />,
-  },
-  {
-    name: "Portfolio",
-    link: "#portfolio",
-    icon: <PortfolioIcon />,
-  },
-  {
-    name: "Experience",
-    link: "#experience",
-    icon: <ExperienceIcon />,
-  },
-  {
-    name: "Contact",
-    link: "#contact",
-    icon: <ContactIcon />,
-  },
-];
 
 export default function Sidebar({ isOpen }: { isOpen: boolean }) {
   const [activeLink, setActiveLink] = useState("");
@@ -96,7 +56,7 @@ export default function Sidebar({ isOpen }: { isOpen: boolean }) {
                 }`}
               >
                 <div className="flex justify-center items-center mb-1">
-                  {link.icon}
+                  {React.createElement(link.icon)}
                 </div>
                 <span className="text-xs">{link.name}</span>
               </Link>

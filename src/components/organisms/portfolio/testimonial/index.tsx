@@ -3,50 +3,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 import { appearsLeft, appearsRight } from "@/src/animation";
-import Profile from "@/src/assets/testimonials/profile-testi.jpg";
+import { TESTIMONIALS } from "@/src/constants/testimonials";
 import "swiper/swiper-bundle.css";
 import Image from "next/image";
 import { RoleText } from "@/src/components/atoms/role-text";
-
-const TESTIMONIALS = [
-  {
-    image: Profile,
-    name: "Not Found",
-    position: "There's not yet",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  },
-  {
-    image: Profile,
-    name: "Not Found",
-    position: "There's not yet",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  },
-  {
-    image: Profile,
-    name: "Not Found",
-    position: "There's not yet",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  },
-  {
-    image: Profile,
-    name: "Not Found",
-    position: "There's not yet",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  },
-  {
-    image: Profile,
-    name: "Not Found",
-    position: "There's not yet",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  },
-  {
-    image: Profile,
-    name: "Not Found",
-    position: "There's not yet",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  },
-  // Add more testimonials as needed
-];
 
 export default function TestimonialSection() {
   const slideCount = Math.ceil(TESTIMONIALS.length / 2);

@@ -4,45 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { appearsLeft, appearsRight } from "@/src/animation";
 import { RoleText } from "../../atoms/role-text";
+import { ACCOUNT, IDENTITY } from "@/src/constants/about";
 import Link from "next/link";
-
-const IDENTITY = [
-  {
-    title: "birthday",
-    subtitle: "4th august 2000",
-  },
-  {
-    title: "age",
-    subtitle: "24 years old",
-  },
-  {
-    title: "residence",
-    subtitle: "indonesia",
-  },
-  {
-    title: "address",
-    subtitle: "tiban mc'dermott",
-  },
-];
-
-const ACCOUNT = [
-  {
-    title: "e-mail",
-    subtitle: "dickytwillio@gmail.com",
-  },
-  {
-    title: "phone",
-    subtitle: "0877-7359-2720",
-  },
-  {
-    title: "github",
-    subtitle: "@dickyd44",
-  },
-  {
-    title: "freelance",
-    subtitle: "Available",
-  },
-];
 
 export default function AboutSection() {
   return (
