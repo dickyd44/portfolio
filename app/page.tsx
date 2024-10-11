@@ -8,33 +8,10 @@ import TestimonialSection from "@/src/components/organisms/portfolio/testimonial
 import ExperienceSection from "@/src/components/organisms/experience";
 import ContactSection from "@/src/components/organisms/contact";
 import { ChevronTopIcon } from "@/src/assets/icon/icon-main";
-import { useEffect, useState, useRef } from "react";
+import { useScrollToTop } from "@/src/store/scroll-to-top";
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(false);
-  const homeRef = useRef<HTMLDivElement | null>(null);
-
-  // Function to show/hide the button based on scroll position
-  const handleScroll = () => {
-    if (window.scrollY > 100) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
-  const scrollToTop = () => {
-    if (homeRef.current) {
-      homeRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const { isVisible, homeRef, scrollToTop } = useScrollToTop();
 
   return (
     <main ref={homeRef} className="w-full">

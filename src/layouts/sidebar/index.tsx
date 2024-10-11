@@ -1,36 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import { SIDEBAR_LINK } from "@/src/constants/layouts/sidebar";
+import { useSidebarStore } from "@/src/store/layout/sidebar";
 import Link from "next/link";
 
 export default function Sidebar({ isOpen }: { isOpen: boolean }) {
-  const [activeLink, setActiveLink] = useState("");
-
-  useEffect(() => {
-    const sections = document.querySelectorAll("section");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const updatedLink = `#${entry.target.id}`;
-            setActiveLink(updatedLink);
-          }
-        });
-      },
-      { root: null, rootMargin: "0px", threshold: 0.3 }
-    );
-
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => {
-      sections.forEach((section) => {
-        observer.unobserve(section);
-      });
-    };
-  }, []);
+  const { activeLink, React } = useSidebarStore();
 
   return (
     <aside
