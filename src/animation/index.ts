@@ -36,6 +36,15 @@ export const appearsRight: Variants = {
   hidden: { opacity: 0, x: 100 },
 };
 
+export const appearsRightOneOnOne: Variants = {
+  visible: (i) => ({
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, delay: i * 0.3 },
+  }),
+  hidden: { opacity: 0, x: 100 },
+};
+
 export const shakeEffect = {
   scale: 1.05,
   rotate: [0, -2, -2, -2, -2, 0],

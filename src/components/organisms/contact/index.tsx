@@ -2,7 +2,7 @@
 import FormContact from "../../molecules/form-contact";
 import { CONTACTS, SOCIAL_MEDIA } from "@/src/constants/contact";
 import { motion } from "framer-motion";
-import { appearsLeft, appearsRight, appearsTop } from "@/src/animation";
+import { appearsLeft, appearsRightOneOnOne, appearsTop } from "@/src/animation";
 import Link from "next/link";
 import { RoleText } from "../../atoms/role-text";
 import React from "react";
@@ -37,13 +37,17 @@ export default function ContactSection() {
           </motion.div>
 
           <motion.div
-            initial="hidden"
             whileInView="visible"
-            variants={appearsRight}
+            variants={appearsRightOneOnOne}
             viewport={{ amount: 0 }}
           >
             {CONTACTS.map((contact, idx) => (
-              <div key={idx} className="bg-white rounded-sm p-5 w-full mb-6">
+              <motion.div
+                key={idx}
+                custom={idx}
+                variants={appearsRightOneOnOne}
+                className="bg-white rounded-sm p-5 w-full mb-6"
+              >
                 <div className="flex items-start gap-4">
                   <div className="bg-teal-600 p-3 rounded-full text-white">
                     {React.createElement(contact.icon)}
@@ -55,9 +59,15 @@ export default function ContactSection() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-            <div className="flex justify-center items-start gap-4 bg-white p-5">
+            <motion.div
+              className="flex justify-center items-start gap-4 bg-white p-5"
+              initial="hidden"
+              whileInView="visible"
+              variants={appearsRightOneOnOne}
+              custom={CONTACTS.length}
+            >
               {SOCIAL_MEDIA.map((sosmed, idx) => (
                 <Link
                   href={sosmed.link}
@@ -68,7 +78,7 @@ export default function ContactSection() {
                   {React.createElement(sosmed.platform)}
                 </Link>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
