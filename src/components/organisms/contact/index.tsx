@@ -37,6 +37,7 @@ export default function ContactSection() {
           </motion.div>
 
           <motion.div
+            initial="hidden"
             whileInView="visible"
             variants={appearsRightOneOnOne}
             viewport={{ amount: 0 }}
