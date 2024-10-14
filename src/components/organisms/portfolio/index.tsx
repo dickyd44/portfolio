@@ -3,9 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { IMAGES } from "@/src/constants/portfolio";
 import { motion } from "framer-motion";
-import { appearsBottom, appearsLeft, appearsRight } from "@/src/animation";
+import { appearsLeft, appearsRight } from "@/src/animation";
 import { useState } from "react";
 import { RoleText } from "../../atoms/role-text";
+import { ButtonSeeMore } from "../../atoms/button-see-more";
 
 export default function PortfolioSection() {
   const [showMore, setShowMore] = useState(false);
@@ -60,20 +61,8 @@ export default function PortfolioSection() {
           ))}
         </div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={appearsBottom}
-          viewport={{ amount: 0 }}
-          className="mt-16 text-center"
-        >
-          <button
-            className="px-5 py-2 bg-teal-600 text-white rounded-sm hover:bg-teal-700 transition-all"
-            onClick={() => setShowMore(!showMore)}
-          >
-            {showMore ? "See Less" : "See More"}
-          </button>
-        </motion.div>
+        {/* ButtonSeeMore */}
+        <ButtonSeeMore showMore={showMore} setShowMore={setShowMore} />
       </div>
     </section>
   );
