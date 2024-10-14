@@ -10,8 +10,10 @@ import Image from "next/image";
 import { EXPERIENCE } from "@/src/constants/experience";
 import { useState } from "react";
 import { RoleText } from "../../atoms/role-text";
+import { ButtonSeeMore } from "../../atoms/button-see-more";
 
 export default function ExperienceSection() {
+  const [showMore, setShowMore] = useState(false);
   const [expandedIndex, setExpandedIndex] = useState(
     Array(EXPERIENCE.length).fill(false)
   );
@@ -23,6 +25,8 @@ export default function ExperienceSection() {
       return newExpanded;
     });
   };
+
+  const displayExperience = showMore ? EXPERIENCE : EXPERIENCE.slice(0, 3);
 
   return (
     <section id="experience" className="flex items-center py-28">
@@ -42,7 +46,7 @@ export default function ExperienceSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-          {EXPERIENCE.map((experience, idx) => (
+          {displayExperience.map((experience, idx) => (
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -72,8 +76,8 @@ export default function ExperienceSection() {
                   </div>
                 </div>
 
-                <span className="absolute right-0 bottom-0 text-sm text-white bg-teal-600 px-4 py-2 rounded-sm">
-                  {experience.date}
+                <span className="capitalize absolute right-0 bottom-0 text-sm text-white bg-teal-600 px-4 py-2 rounded-sm">
+                  {experience.work}
                 </span>
               </div>
 
@@ -106,6 +110,8 @@ export default function ExperienceSection() {
             </motion.div>
           ))}
         </div>
+
+        <ButtonSeeMore showMore={showMore} setShowMore={setShowMore} />
       </div>
     </section>
   );
