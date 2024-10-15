@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { appearsLeft, appearsRight } from "@/src/animation";
+import { appearsLeft, appearsRight, appearsTop } from "@/src/animation";
 import { RoleText } from "@/src/components/atoms/role-text";
 import { SKILLS, ACHIEVEMENTS } from "@/src/constants/my-skills";
 import React from "react";
@@ -9,12 +9,20 @@ export default function MySkillsSection() {
   return (
     <section className="container mx-auto py-24">
       {/* Skills Section */}
-      <h1 className="text-4xl uppercase font-semibold">My Skills</h1>
-      <div className="my-3 border-[1px] border-teal-600 w-16" />
-      <RoleText
-        text="front-end developer based in indonesia"
-        className="mb-8"
-      />
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={appearsTop}
+        viewport={{ amount: 0 }}
+      >
+        <h1 className="text-4xl uppercase font-semibold">My Skills</h1>
+        <div className="my-3 border-[1px] border-teal-600 w-16" />
+        <RoleText
+          text="front-end developer based in indonesia"
+          className="mb-8"
+        />
+      </motion.div>
+
       <div className="flex flex-col items-center xl:flex-row gap-10 xl:gap-20">
         <motion.div
           initial="hidden"
