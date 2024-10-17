@@ -26,7 +26,7 @@ export const EXPERIENCE = [
     work: "part-time",
     company: "family coffee",
     label: "barista",
-    title: "service customer making good coffee",
+    title: "making good coffee",
     subtitle:
       "During the 7 months I was a barista, I learned a lot there how to brew coffee properly and correctly, and there were also many things I could learn there.",
   },

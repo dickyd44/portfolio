@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { appearsLeft, appearsRight, appearsTop } from "@/src/animation";
 import { RoleText } from "@/src/components/atoms/role-text";
-import { SKILLS, ACHIEVEMENTS } from "@/src/constants/my-skills";
+import { SKILLS, STACK } from "@/src/constants/my-skills";
 import React from "react";
 
 export default function MySkillsSection() {
@@ -57,16 +57,16 @@ export default function MySkillsSection() {
           viewport={{ amount: 0 }}
           className="grid grid-cols-2 gap-4 w-full"
         >
-          {ACHIEVEMENTS.map((achievement, index) => (
+          {STACK.map((stack, index) => (
             <div
               key={index}
               className="flex items-center justify-center border-2 border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-200 ease-in-out rounded-lg p-4 text-center"
             >
               <div className="text-3xl mb-1 mr-2">
-                {React.createElement(achievement.icon)}
+                {React.createElement(stack.icon)}
               </div>
               <div className="text-sm font-medium uppercase cursor-default">
-                {achievement.title}
+                {stack.title}
               </div>
             </div>
           ))}

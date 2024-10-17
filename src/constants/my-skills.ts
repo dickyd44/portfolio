@@ -16,7 +16,7 @@ export const SKILLS = [
   { title: "MySQL", percentage: 80 },
 ];
 
-export const ACHIEVEMENTS = [
+export const STACK = [
   { icon: NextJsIcon, title: "next.js" },
   { icon: TailwindCssIcon, title: "tailwindcss" },
   { icon: VueJsIcon, title: "vue.js" },
