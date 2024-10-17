@@ -15,7 +15,7 @@ export default function MySkillsSection() {
         variants={appearsTop}
         viewport={{ amount: 0 }}
       >
-        <h1 className="text-4xl uppercase font-semibold">My Skills</h1>
+        <h1 className="text-4xl uppercase font-semibold">tech stack</h1>
         <div className="my-3 border-[1px] border-teal-600 w-16" />
         <RoleText
           text="front-end developer based in indonesia"
@@ -39,11 +39,11 @@ export default function MySkillsSection() {
                   {skill.percentage}%
                 </span>
               </div>
-              <div className="w-full bg-light rounded-full h-2">
+              <div className="w-full bg-light rounded-full h-1.5">
                 <div
-                  className="bg-teal-600 h-2 rounded-full"
+                  className="bg-teal-600 h-1.5 rounded-full"
                   style={{ width: `${skill.percentage}%` }}
-                ></div>
+                />
               </div>
             </div>
           ))}
@@ -60,12 +60,12 @@ export default function MySkillsSection() {
           {ACHIEVEMENTS.map((achievement, index) => (
             <div
               key={index}
-              className="flex items-center justify-center border-2 border-teal-600 text-teal-600 rounded-lg p-4 text-center"
+              className="flex items-center justify-center border-2 border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-200 ease-in-out rounded-lg p-4 text-center"
             >
-              <div className="text-3xl mb-2 mr-2">
+              <div className="text-3xl mb-1 mr-2">
                 {React.createElement(achievement.icon)}
               </div>
-              <div className="text-base font-normal capitalize text-gray-800">
+              <div className="text-sm font-medium uppercase cursor-default">
                 {achievement.title}
               </div>
             </div>

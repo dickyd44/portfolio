@@ -1,8 +1,10 @@
 import {
-  CompactDiscIcon,
-  AwardIcon,
-  CoffeeIcon,
-  FlagIcon,
+  NextJsIcon,
+  TailwindCssIcon,
+  VueJsIcon,
+  LaravelIcon,
+  PostgresIcon,
+  MysqlIcon,
 } from "@/src/assets/icon/icon-skills";
 
 export const SKILLS = [
@@ -10,11 +12,15 @@ export const SKILLS = [
   { title: "TailwindCSS", percentage: 85 },
   { title: "Vue.JS", percentage: 86 },
   { title: "Laravel", percentage: 88 },
+  { title: "PostgreSQL", percentage: 71 },
+  { title: "MySQL", percentage: 80 },
 ];
 
 export const ACHIEVEMENTS = [
-  { icon: CompactDiscIcon, title: "80 Albums Listened" },
-  { icon: AwardIcon, title: "1 Real-Projects Finished" },
-  { icon: CoffeeIcon, title: "3 Cups Per/Day Coffee" },
-  { icon: FlagIcon, title: "1 Cities Visited" },
+  { icon: NextJsIcon, title: "next.js" },
+  { icon: TailwindCssIcon, title: "tailwindcss" },
+  { icon: VueJsIcon, title: "vue.js" },
+  { icon: LaravelIcon, title: "laravel" },
+  { icon: PostgresIcon, title: "postgresql" },
+  { icon: MysqlIcon, title: "mysql" },
 ];
