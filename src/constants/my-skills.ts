@@ -1,6 +1,6 @@
 import {
   NextJsIcon,
-  TailwindCssIcon,
+  PrismaIcon,
   VueJsIcon,
   LaravelIcon,
   PostgresIcon,
@@ -8,18 +8,18 @@ import {
 } from "@/src/assets/icon/icon-skills";
 
 export const SKILLS = [
-  { title: "Next.JS", percentage: 92 },
-  { title: "TailwindCSS", percentage: 85 },
-  { title: "Vue.JS", percentage: 86 },
-  { title: "Laravel", percentage: 88 },
-  { title: "PostgreSQL", percentage: 71 },
-  { title: "MySQL", percentage: 80 },
+  { title: "next.js", percentage: 92 },
+  { title: "vue.js", percentage: 86 },
+  { title: "prisma", percentage: 65 },
+  { title: "laravel", percentage: 88 },
+  { title: "postgresql", percentage: 71 },
+  { title: "mysql", percentage: 80 },
 ];
 
 export const STACK = [
   { icon: NextJsIcon, title: "next.js" },
-  { icon: TailwindCssIcon, title: "tailwindcss" },
   { icon: VueJsIcon, title: "vue.js" },
+  { icon: PrismaIcon, title: "prisma" },
   { icon: LaravelIcon, title: "laravel" },
   { icon: PostgresIcon, title: "postgresql" },
   { icon: MysqlIcon, title: "mysql" },

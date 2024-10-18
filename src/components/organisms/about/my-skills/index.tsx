@@ -37,7 +37,7 @@ export default function MySkillsSection() {
             return (
               <div key={index} ref={ref} className="mb-4">
                 <div className="flex justify-between mb-1.5">
-                  <span className="font-normal">{skill.title}</span>
+                  <span className="font-normal capitalize">{skill.title}</span>
                   <span className="text-zinc-600 font-normal">{count}%</span>
                 </div>
                 <div className="w-full bg-light rounded-full h-1.5">
