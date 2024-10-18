@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { appearsLeft, appearsRight, appearsTop } from "@/src/animation";
 import { RoleText } from "@/src/components/atoms/role-text";
 import { SKILLS, STACK } from "@/src/constants/my-skills";
+import { useProgressBar } from "@/src/store/progress-bar";
 import React from "react";
 
 export default function MySkillsSection() {
@@ -28,25 +29,28 @@ export default function MySkillsSection() {
           initial="hidden"
           whileInView="visible"
           variants={appearsLeft}
-          viewport={{ amount: 0 }}
+          viewport={{ amount: 0.5, once: true }}
           className="w-full"
         >
-          {SKILLS.map((skill, index) => (
-            <div key={index} className="mb-4">
-              <div className="flex justify-between mb-1.5">
-                <span className="font-normal">{skill.title}</span>
-                <span className="text-zinc-600 font-normal">
-                  {skill.percentage}%
-                </span>
+          {SKILLS.map((skill, index) => {
+            const { inView, ref, count } = useProgressBar(skill.percentage);
+            return (
+              <div key={index} ref={ref} className="mb-4">
+                <div className="flex justify-between mb-1.5">
+                  <span className="font-normal">{skill.title}</span>
+                  <span className="text-zinc-600 font-normal">{count}%</span>
+                </div>
+                <div className="w-full bg-light rounded-full h-1.5">
+                  <motion.div
+                    className="bg-teal-600 h-1.5 rounded-full"
+                    initial={{ width: 0 }}
+                    transition={{ duration: 0.8 }}
+                    animate={{ width: inView ? `${skill.percentage}%` : "0%" }}
+                  />
+                </div>
               </div>
-              <div className="w-full bg-light rounded-full h-1.5">
-                <div
-                  className="bg-teal-600 h-1.5 rounded-full"
-                  style={{ width: `${skill.percentage}%` }}
-                />
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </motion.div>
 
         {/* Achievements Section */}
