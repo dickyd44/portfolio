@@ -6,7 +6,7 @@ interface RoleTextString {
 export function RoleText({ text, className }: RoleTextString) {
   return (
     <p className={`uppercase text-xl font-light text-zinc-500 ${className}`}>
-      {text}
+      {text}&nbsp;based in Indonesia
     </p>
   );
 }

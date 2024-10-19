@@ -6,11 +6,12 @@ export function useHomeStore() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
   const [isReversing, setIsReversing] = useState(false);
+  const [hoverIndex, setIsHovered] = useState<number | null>(null);
 
   useEffect(() => {
     const currentText = texts[currentTextIndex];
 
-    const timeOutDuration = isReversing ? 100 : 100;
+    const timeOutDuration = isReversing ? 50 : 100;
 
     const letterTimeOut = setTimeout(() => {
       if (!isReversing) {
@@ -39,5 +40,7 @@ export function useHomeStore() {
     currentLetterIndex,
     isReversing,
     texts,
+    setIsHovered,
+    hoverIndex,
   };
 }

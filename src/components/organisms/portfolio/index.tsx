@@ -24,10 +24,7 @@ export default function PortfolioSection() {
         >
           <h1 className="text-4xl uppercase font-semibold">latest works</h1>
           <div className="my-3 border-[1px] border-teal-600 w-16" />
-          <RoleText
-            text="front-end developer based in indonesia"
-            className="mb-10"
-          />
+          <RoleText text="front-end developer" className="mb-8" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">

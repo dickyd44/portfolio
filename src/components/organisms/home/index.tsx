@@ -5,7 +5,13 @@ import { useHomeStore } from "@/src/store/home";
 import Link from "next/link";
 
 export default function HomeSection() {
-  const { currentTextIndex, currentLetterIndex, texts } = useHomeStore();
+  const {
+    currentTextIndex,
+    currentLetterIndex,
+    texts,
+    setIsHovered,
+    hoverIndex,
+  } = useHomeStore();
 
   return (
     <motion.section
@@ -18,8 +24,23 @@ export default function HomeSection() {
     >
       <div className="flex flex-col justify-center space-y-4">
         <h4 className="text-xl md:text-2xl font-medium">Hello there...</h4>
-        <h2 className="text-6xl md:text-7xl font-bold">Dicky Darmawan</h2>
-        <h3 className="text-xl md:text-2xl font-medium">
+
+        <motion.h2 className="text-6xl md:text-7xl font-bold cursor-default">
+          {"Dicky Darmawan".split("").map((letter, idx) => (
+            <motion.span
+              key={idx}
+              style={{ display: "inline-block" }}
+              onMouseEnter={() => setIsHovered(idx)}
+              onMouseLeave={() => setIsHovered(null)}
+              animate={{ rotate: hoverIndex === idx ? 360 : 0 }}
+              transition={{ duration: 0.1 }}
+            >
+              {letter === " " ? "\u00A0" : letter}
+            </motion.span>
+          ))}
+        </motion.h2>
+
+        <h3 className="text-xl md:text-2xl font-medium cursor-default">
           I Am a Passionate{" "}
           {texts[currentTextIndex].split("").map((letter, index) => (
             <motion.span
@@ -33,6 +54,7 @@ export default function HomeSection() {
             </motion.span>
           ))}
         </h3>
+
         <p className="text-base text-zinc-500">
           The dynamics of how users interact with interactive elements within a{" "}
           <br />
