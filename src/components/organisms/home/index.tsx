@@ -41,17 +41,21 @@ export default function HomeSection() {
         </motion.h2>
 
         <h3 className="text-xl md:text-2xl font-medium cursor-default">
-          I Am a Passionate{" "}
+          I Am a Passionate {""}
           {texts[currentTextIndex].split("").map((letter, index) => (
-            <motion.span
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              animate={index < currentLetterIndex ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0 }}
-              className="underline"
-            >
-              {letter}
-            </motion.span>
+            <span key={index} className="relative inline-block">
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                animate={index < currentLetterIndex ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0 }}
+                className="border-b border-black pb-0.5"
+              >
+                {letter === " " ? "\u00A0" : letter}
+              </motion.span>
+              {index === currentLetterIndex - 1 && (
+                <span className="ml-0.5 border-r-2 border-black" />
+              )}
+            </span>
           ))}
         </h3>
 

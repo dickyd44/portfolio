@@ -11,7 +11,7 @@ export function useHomeStore() {
   useEffect(() => {
     const currentText = texts[currentTextIndex];
 
-    const timeOutDuration = isReversing ? 50 : 100;
+    const timeOutDuration = isReversing ? 70 : 100;
 
     const letterTimeOut = setTimeout(() => {
       if (!isReversing) {
