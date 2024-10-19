@@ -29,7 +29,7 @@ export default function HomeSection() {
           {"Dicky Darmawan".split("").map((letter, idx) => (
             <motion.span
               key={idx}
-              style={{ display: "inline-block" }}
+              className="inline-block"
               onMouseEnter={() => setIsHovered(idx)}
               onMouseLeave={() => setIsHovered(null)}
               animate={{ rotate: hoverIndex === idx ? 360 : 0 }}

@@ -37,9 +37,7 @@ export default function ServiceSection() {
           variants={appearsTop}
           viewport={{ amount: 0 }}
         >
-          <h1 className="text-4xl uppercase font-semibold">Services</h1>
-          <div className="my-3 border-[1px] border-teal-600 w-16" />
-          <RoleText text="front-end developer" className="mb-8" />
+          <RoleText text="services" className="mb-10" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">

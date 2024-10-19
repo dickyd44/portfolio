@@ -17,9 +17,7 @@ export default function AboutSection() {
           variants={appearsLeft}
           viewport={{ amount: 0 }}
         >
-          <h1 className="text-4xl uppercase font-semibold">About Me</h1>
-          <div className="my-3 border-[1px] border-teal-600 w-16" />
-          <RoleText text="front-end developer" className="mb-8" />
+          <RoleText text="about me" className="mb-10" />
         </motion.div>
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-10">

@@ -16,9 +16,7 @@ export default function MySkillsSection() {
         variants={appearsTop}
         viewport={{ amount: 0 }}
       >
-        <h1 className="text-4xl uppercase font-semibold">tech stack</h1>
-        <div className="my-3 border-[1px] border-teal-600 w-16" />
-        <RoleText text="front-end developer" className="mb-8" />
+        <RoleText text="tech stack" className="mb-10" />
       </motion.div>
 
       <div className="flex flex-col items-center xl:flex-row gap-10 xl:gap-20">

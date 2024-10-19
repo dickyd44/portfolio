@@ -20,9 +20,7 @@ export default function TestimonialSection() {
           variants={appearsLeft}
           viewport={{ amount: 0 }}
         >
-          <h1 className="text-4xl uppercase font-semibold">testimonials</h1>
-          <div className="my-3 border-[1px] border-teal-600 w-16" />
-          <RoleText text="front-end developer" className="mb-20" />
+          <RoleText text="testimonials" className="mb-16" />
         </motion.div>
 
         <motion.div

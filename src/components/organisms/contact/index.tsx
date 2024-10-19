@@ -17,9 +17,7 @@ export default function ContactSection() {
           variants={appearsTop}
           viewport={{ amount: 0 }}
         >
-          <h1 className="text-4xl uppercase font-semibold">get in touch</h1>
-          <div className="my-3 border-[1px] border-teal-600 w-16" />
-          <RoleText text="front-end developer" className="mb-8" />
+          <RoleText text="get in touch" className="mb-10" />
         </motion.div>
 
         <div className="w-full grid grid-cols-1 lg:grid-cols-3 lg:gap-6 gap-y-6">
