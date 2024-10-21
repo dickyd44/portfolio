@@ -6,7 +6,10 @@ export function useHomeStore() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
   const [isReversing, setIsReversing] = useState(false);
-  const [hoverIndex, setIsHovered] = useState<number | null>(null);
+  const [hoverIndexDicky, setIsHoveredDicky] = useState<number | null>(null);
+  const [hoverIndexDarmawan, setIsHoveredDarmawan] = useState<number | null>(
+    null
+  );
 
   useEffect(() => {
     const currentText = texts[currentTextIndex];
@@ -40,7 +43,9 @@ export function useHomeStore() {
     currentLetterIndex,
     isReversing,
     texts,
-    setIsHovered,
-    hoverIndex,
+    setIsHoveredDicky,
+    hoverIndexDicky,
+    hoverIndexDarmawan,
+    setIsHoveredDarmawan,
   };
 }

@@ -9,8 +9,10 @@ export default function HomeSection() {
     currentTextIndex,
     currentLetterIndex,
     texts,
-    setIsHovered,
-    hoverIndex,
+    setIsHoveredDicky,
+    hoverIndexDicky,
+    hoverIndexDarmawan,
+    setIsHoveredDarmawan,
   } = useHomeStore();
 
   return (
@@ -26,22 +28,37 @@ export default function HomeSection() {
         <h4 className="text-xl md:text-2xl font-medium">Hello there...</h4>
 
         <motion.h2 className="text-6xl md:text-7xl font-bold cursor-default">
-          {"Dicky Darmawan".split("").map((letter, idx) => (
+          {"Dicky".split("").map((letter, idx) => (
             <motion.span
-              key={idx}
+              key={`dicky-${idx}`}
               className="inline-block"
-              onMouseEnter={() => setIsHovered(idx)}
-              onMouseLeave={() => setIsHovered(null)}
-              animate={{ rotate: hoverIndex === idx ? 360 : 0 }}
+              onMouseEnter={() => setIsHoveredDicky(idx)}
+              onMouseLeave={() => setIsHoveredDicky(null)}
+              animate={{ rotate: hoverIndexDicky === idx ? 360 : 0 }}
               transition={{ duration: 0.1 }}
             >
-              {letter === " " ? "\u00A0" : letter}
+              {letter}
+            </motion.span>
+          ))}
+          {/* Membuat line break di bawah teks 'Dicky' untuk ukuran layar kecil */}
+          &nbsp;
+          <br className="block sm:hidden" />
+          {"Darmawan".split("").map((letter, idx) => (
+            <motion.span
+              key={`darmawan-${idx}`}
+              className="inline-block"
+              onMouseEnter={() => setIsHoveredDarmawan(idx)}
+              onMouseLeave={() => setIsHoveredDarmawan(null)}
+              animate={{ rotate: hoverIndexDarmawan === idx ? 360 : 0 }}
+              transition={{ duration: 0.1 }}
+            >
+              {letter}
             </motion.span>
           ))}
         </motion.h2>
 
         <h3 className="text-xl md:text-2xl font-medium cursor-default">
-          I Am a Passionate {""}
+          I Am a Passionate {""} <br className="block sm:hidden" />
           {texts[currentTextIndex].split("").map((letter, index) => (
             <span key={index} className="relative inline-block">
               <motion.span
