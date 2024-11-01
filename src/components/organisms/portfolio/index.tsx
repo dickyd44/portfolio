@@ -20,7 +20,7 @@ export default function PortfolioSection() {
           initial="hidden"
           whileInView="visible"
           variants={appearsLeft}
-          viewport={{ amount: 0 }}
+          viewport={{ amount: 0, once: true }}
         >
           <RoleText text="latest works" className="mb-10" />
         </motion.div>
@@ -31,7 +31,7 @@ export default function PortfolioSection() {
               initial="hidden"
               whileInView="visible"
               variants={idx % 2 === 0 ? appearsLeft : appearsRight}
-              viewport={{ amount: 0 }}
+              viewport={{ amount: 0, once: true }}
               key={idx}
               className="overflow-hidden relative group"
             >

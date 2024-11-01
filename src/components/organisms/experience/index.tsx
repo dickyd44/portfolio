@@ -35,7 +35,7 @@ export default function ExperienceSection() {
           initial="hidden"
           whileInView="visible"
           variants={appearsTop}
-          viewport={{ amount: 0 }}
+          viewport={{ amount: 0, once: true }}
         >
           <RoleText text="experiences" className="mb-10" />
         </motion.div>
@@ -52,6 +52,7 @@ export default function ExperienceSection() {
                   ? appearsBottom
                   : appearsRight
               }
+              viewport={{ amount: 0, once: true }}
               key={idx}
               className="relative h-full pb-16 border border-slate-300 rounded-sm shadow"
             >

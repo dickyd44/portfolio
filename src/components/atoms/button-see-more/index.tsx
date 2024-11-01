@@ -15,7 +15,7 @@ export const ButtonSeeMore = ({
       initial="hidden"
       whileInView="visible"
       variants={appearsBottom}
-      viewport={{ amount: 0 }}
+      viewport={{ amount: 0, once: true }}
       className="mt-16 text-center"
     >
       <button

@@ -18,7 +18,7 @@ export default function TestimonialSection() {
           initial="hidden"
           whileInView="visible"
           variants={appearsLeft}
-          viewport={{ amount: 0 }}
+          viewport={{ amount: 0, once: true }}
         >
           <RoleText text="testimonials" className="mb-16" />
         </motion.div>
@@ -27,7 +27,7 @@ export default function TestimonialSection() {
           initial="hidden"
           whileInView="visible"
           variants={appearsRight}
-          viewport={{ amount: 0 }}
+          viewport={{ amount: 0, once: true }}
         >
           <Swiper
             spaceBetween={50}

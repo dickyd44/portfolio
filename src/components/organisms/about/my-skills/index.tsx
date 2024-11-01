@@ -14,7 +14,7 @@ export default function MySkillsSection() {
         initial="hidden"
         whileInView="visible"
         variants={appearsTop}
-        viewport={{ amount: 0 }}
+        viewport={{ amount: 0, once: true }}
       >
         <RoleText text="tech stack" className="mb-10" />
       </motion.div>
@@ -53,7 +53,7 @@ export default function MySkillsSection() {
           initial="hidden"
           whileInView="visible"
           variants={appearsRight}
-          viewport={{ amount: 0 }}
+          viewport={{ amount: 0, once: true }}
           className="grid grid-cols-2 gap-4 w-full"
         >
           {STACK.map((stack, index) => (

@@ -35,7 +35,7 @@ export default function ServiceSection() {
           initial="hidden"
           whileInView="visible"
           variants={appearsTop}
-          viewport={{ amount: 0 }}
+          viewport={{ amount: 0, once: true }}
         >
           <RoleText text="services" className="mb-10" />
         </motion.div>
@@ -53,11 +53,11 @@ export default function ServiceSection() {
                   ? appearsBottom
                   : appearsRight
               }
-              viewport={{ amount: 0 }}
+              viewport={{ amount: 0, once: true }}
               key={idx}
             >
               <div className="cursor-default bg-white rounded-sm p-8 hover:bg-teal-500 hover:border-white hover:text-white group">
-                <div className="rounded-full p-4 border-dotted border-2 border-teal-600 text-teal-600 w-[86px] group-hover:border-white group-hover:text-white transition duration-300 ease-in-out">
+                <div className="rounded-full p-4 border-dotted border-2 border-teal-600 text-teal-600 w-[86px] group-hover:border-white group-hover:text-white transition duration-200 ease-in-out">
                   {React.createElement(card.icon)}
                 </div>
 

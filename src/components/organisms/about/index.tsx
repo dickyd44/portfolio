@@ -15,7 +15,7 @@ export default function AboutSection() {
           initial="hidden"
           whileInView="visible"
           variants={appearsLeft}
-          viewport={{ amount: 0 }}
+          viewport={{ amount: 0, once: true }}
         >
           <RoleText text="about me" className="mb-10" />
         </motion.div>
@@ -25,7 +25,7 @@ export default function AboutSection() {
             initial="hidden"
             whileInView="visible"
             variants={appearsLeft}
-            viewport={{ amount: 0 }}
+            viewport={{ amount: 0, once: true }}
             className="bg-white rounded-sm shadow-xl p-4 w-auto"
           >
             <Image
@@ -41,7 +41,7 @@ export default function AboutSection() {
             initial="hidden"
             whileInView="visible"
             variants={appearsRight}
-            viewport={{ amount: 0 }}
+            viewport={{ amount: 0, once: true }}
           >
             <h2 className="text-4xl font-bold">I&apos;m Dicky Darmawan</h2>
             <h4 className="uppercase text-xl font-light py-5">

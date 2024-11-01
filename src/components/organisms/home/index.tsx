@@ -20,7 +20,7 @@ export default function HomeSection() {
       initial="hidden"
       whileInView="visible"
       variants={appearsLeft}
-      viewport={{ amount: 0 }}
+      viewport={{ amount: 0, once: true }}
       id="home"
       className="container flex items-center min-h-screen"
     >

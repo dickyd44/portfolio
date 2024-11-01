@@ -15,7 +15,7 @@ export default function ContactSection() {
           initial="hidden"
           whileInView="visible"
           variants={appearsTop}
-          viewport={{ amount: 0 }}
+          viewport={{ amount: 0, once: true }}
         >
           <RoleText text="get in touch" className="mb-10" />
         </motion.div>
@@ -25,7 +25,7 @@ export default function ContactSection() {
             initial="hidden"
             whileInView="visible"
             variants={appearsLeft}
-            viewport={{ amount: 0 }}
+            viewport={{ amount: 0, once: true }}
             className="col-span-2"
           >
             <FormContact />
@@ -35,7 +35,7 @@ export default function ContactSection() {
             initial="hidden"
             whileInView="visible"
             variants={appearsRightOneOnOne}
-            viewport={{ amount: 0 }}
+            viewport={{ amount: 0, once: true }}
           >
             {CONTACTS.map((contact, idx) => (
               <motion.div
@@ -63,6 +63,7 @@ export default function ContactSection() {
               whileInView="visible"
               variants={appearsRightOneOnOne}
               custom={CONTACTS.length}
+              viewport={{ amount: 0, once: true }}
             >
               {SOCIAL_MEDIA.map((sosmed, idx) => (
                 <Link
