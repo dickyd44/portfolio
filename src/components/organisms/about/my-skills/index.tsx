@@ -37,7 +37,7 @@ export default function MySkillsSection() {
                 </div>
                 <div className="w-full bg-light rounded-full h-1.5">
                   <motion.div
-                    className="bg-teal-600 h-1.5 rounded-full"
+                    className="bg-galaxy_core h-1.5 rounded-full"
                     initial={{ width: 0 }}
                     transition={{ duration: 0.8 }}
                     animate={{ width: inView ? `${skill.percentage}%` : "0%" }}
@@ -59,7 +59,7 @@ export default function MySkillsSection() {
           {STACK.map((stack, index) => (
             <div
               key={index}
-              className="flex items-center justify-center border-2 border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-200 ease-in-out rounded-lg p-4 text-center"
+              className="flex items-center justify-center border-2 border-galaxy_core text-galaxy_core hover:bg-galaxy_core hover:text-white transition-all duration-200 ease-in-out rounded-lg p-4 text-center"
             >
               <div className="text-3xl mb-1 mr-2">
                 {React.createElement(stack.icon)}

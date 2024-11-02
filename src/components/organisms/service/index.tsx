@@ -56,8 +56,8 @@ export default function ServiceSection() {
               viewport={{ amount: 0, once: true }}
               key={idx}
             >
-              <div className="cursor-default bg-white rounded-sm p-8 hover:bg-teal-500 hover:border-white hover:text-white group">
-                <div className="rounded-full p-4 border-dotted border-2 border-teal-600 text-teal-600 w-[86px] group-hover:border-white group-hover:text-white transition duration-200 ease-in-out">
+              <div className="cursor-default bg-white rounded-sm p-8 hover:bg-galaxy_core hover:border-white hover:text-white group">
+                <div className="rounded-full p-4 border-dotted border-2 border-galaxy_core text-galaxy_core w-[86px] group-hover:border-white group-hover:text-white transition duration-200 ease-in-out">
                   {React.createElement(card.icon)}
                 </div>
 
@@ -69,7 +69,7 @@ export default function ServiceSection() {
                 </p>
                 <span
                   onClick={() => toggleTruncated(idx)}
-                  className="text-teal-600 text-sm underline group-hover:text-white cursor-pointer"
+                  className="text-galaxy_core text-sm underline group-hover:text-white cursor-pointer"
                 >
                   {truncatedIndex[idx] ? "Less" : "More"}
                 </span>

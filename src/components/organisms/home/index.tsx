@@ -84,13 +84,13 @@ export default function HomeSection() {
         <div className="flex gap-5">
           <Link
             href="#portfolio"
-            className="bg-teal-600 hover:bg-teal-800 w-32 h-12 flex items-center justify-center"
+            className="bg-galaxy_core hover:bg-galaxy_dark w-32 h-12 flex items-center justify-center"
           >
             <span className="uppercase text-white">my work</span>
           </Link>
           <Link
             href="#contact"
-            className="border-2 border-teal-600 hover:bg-teal-600 text-teal-600 hover:text-white w-32 h-12 flex items-center justify-center"
+            className="border-2 border-galaxy_core hover:bg-galaxy_core text-galaxy_core hover:text-white w-32 h-12 flex items-center justify-center"
           >
             <span className="uppercase">hire me</span>
           </Link>

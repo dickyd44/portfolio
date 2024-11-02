@@ -12,11 +12,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        orange: "#FF7F1E",
-        red: "#EC3C3C",
-        dark: "#242629",
+        galaxy_core: "#001845",
+        galaxy_dark: "#001233",
+        galaxy: "#023e7d",
         light: "#E6E6E6",
-        gray: "#CDCDCD",
       },
       container: {
         center: true,

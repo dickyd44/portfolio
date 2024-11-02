@@ -45,7 +45,7 @@ export default function ContactSection() {
                 className="bg-white rounded-sm p-5 w-full mb-6"
               >
                 <div className="flex items-start gap-4">
-                  <div className="bg-teal-600 p-3 rounded-full text-white">
+                  <div className="bg-galaxy_core p-3 rounded-full text-white">
                     {React.createElement(contact.icon)}
                   </div>
                   <div>
@@ -69,7 +69,7 @@ export default function ContactSection() {
                 <Link
                   href={sosmed.link}
                   key={idx}
-                  className="bg-teal-600 p-3 rounded-full text-white hover:bg-teal-700"
+                  className="bg-galaxy_core p-3 rounded-full text-white hover:bg-galaxy_dark"
                   target="_blank"
                 >
                   {React.createElement(sosmed.platform)}

@@ -10,11 +10,11 @@ export default function Navbar({
   return (
     <section className="block lg:hidden">
       <div className="w-full fixed z-40 bg-white flex justify-between items-center p-3">
-        <p className="text-xl font-bold text-teal-600">dicky.</p>
+        <p className="text-xl font-bold text-galaxy_core">dicky.</p>
         <button
           type="button"
           onClick={toggleSidebar}
-          className="bg-teal-600 p-2 rounded-sm text-white"
+          className="bg-galaxy_core p-2 rounded-sm text-white"
         >
           <HumbergerIcon />
         </button>

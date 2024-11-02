@@ -15,7 +15,7 @@ export default function Sidebar({ isOpen }: { isOpen: boolean }) {
       <div className="h-screen w-24 bg-white shadow-2xl">
         <div className="flex flex-col">
           {/* icon */}
-          <div className="h-11 bg-teal-600 flex items-center justify-center">
+          <div className="h-11 bg-galaxy_core flex items-center justify-center">
             <h1 className="text-center text-white font-semibold">dicky.</h1>
           </div>
 
@@ -25,8 +25,8 @@ export default function Sidebar({ isOpen }: { isOpen: boolean }) {
               <Link
                 key={idx}
                 href={link.link}
-                className={`nav-link border-b border-zinc-200 py-3 w-full text-center hover:text-teal-600 ${
-                  activeLink === link.link ? "text-teal-600" : ""
+                className={`nav-link border-b border-zinc-200 py-3 w-full text-center hover:text-galaxy ${
+                  activeLink === link.link ? "text-galaxy" : ""
                 }`}
               >
                 <div className="flex justify-center items-center mb-1">

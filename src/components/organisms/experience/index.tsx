@@ -72,7 +72,7 @@ export default function ExperienceSection() {
                   </div>
                 </div>
 
-                <span className="capitalize absolute right-0 bottom-0 text-sm text-white bg-teal-600 px-4 py-2 rounded-sm">
+                <span className="capitalize absolute right-0 bottom-0 text-sm text-white bg-galaxy_core px-4 py-2 rounded-sm">
                   {experience.work}
                 </span>
               </div>
@@ -93,7 +93,7 @@ export default function ExperienceSection() {
                 </p>
 
                 <div className="absolute bottom-5">
-                  <div className="text-sm w-32 h-10 border border-slate-300 hover:bg-teal-600 transition-colors duration-300 hover:text-white cursor-pointer shadow mt-3">
+                  <div className="text-sm w-32 h-10 border border-slate-300 hover:bg-galaxy_dark transition-colors duration-300 hover:text-white cursor-pointer shadow mt-3">
                     <div
                       onClick={() => toggleExpanded(idx)}
                       className="flex justify-center items-center h-full capitalize"

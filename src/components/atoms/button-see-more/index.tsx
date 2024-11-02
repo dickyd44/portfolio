@@ -19,7 +19,7 @@ export const ButtonSeeMore = ({
       className="mt-16 text-center"
     >
       <button
-        className="px-5 py-2 bg-teal-600 text-white rounded-sm hover:bg-teal-700 transition-all"
+        className="px-5 py-2 bg-galaxy_core text-white rounded-sm hover:bg-galaxy_dark transition-all"
         onClick={() => setShowMore(!showMore)}
       >
         {showMore ? "See Less" : "See More"}

@@ -50,7 +50,7 @@ export default function TestimonialSection() {
                     (testimonial, idx) => (
                       <div
                         key={idx}
-                        className="flex items-start bg-white p-5 rounded-sm shadow-md border-[0.1px] border-teal-600"
+                        className="flex items-start bg-white p-5 rounded-sm shadow-md border-[0.1px] border-galaxy_core"
                       >
                         <Image
                           src={testimonial.image}

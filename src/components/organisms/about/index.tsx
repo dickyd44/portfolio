@@ -20,7 +20,7 @@ export default function AboutSection() {
           <RoleText text="about me" className="mb-10" />
         </motion.div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 xl:grid-cols-2 items-center gap-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -44,10 +44,13 @@ export default function AboutSection() {
             viewport={{ amount: 0, once: true }}
           >
             <h2 className="text-4xl font-bold">I&apos;m Dicky Darmawan</h2>
-            <h4 className="uppercase text-xl font-light py-5">
+            <h4 className="capitalize text-xl font-light py-5">
               a lead&nbsp;
-              <span className="text-teal-600">front-end developer</span> based
-              in <span className="text-teal-600">batam</span>
+              <span className="text-galaxy_core font-semibold">
+                front-end developer
+              </span>{" "}
+              based in{" "}
+              <span className="text-galaxy_core font-semibold">batam</span>
             </h4>
             <p className="text-base text-zinc-500">
               I design and develop services for customers of all sizes,
@@ -91,7 +94,7 @@ export default function AboutSection() {
               <Link
                 href="/Resume_Dicky Darmawan.pdf"
                 target="_blank"
-                className="uppercase bg-teal-600 hover:bg-teal-700 text-white w-40 h-12 flex justify-center items-center"
+                className="uppercase bg-galaxy_core hover:bg-galaxy_dark text-white w-40 h-12 flex justify-center items-center"
               >
                 review cv
               </Link>

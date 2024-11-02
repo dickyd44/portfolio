@@ -55,7 +55,7 @@ export default function FormContact() {
         <div className="mt-auto flex justify-end">
           <button
             type="submit"
-            className="mt-6 bg-teal-600 text-white px-5 py-3 text-sm rounded-sm hover:bg-teal-700 transition-colors duration-300"
+            className="mt-6 bg-galaxy_core text-white px-5 py-3 text-sm rounded-sm hover:bg-galaxy_dark transition-colors duration-300"
           >
             SEND MESSAGE
           </button>
