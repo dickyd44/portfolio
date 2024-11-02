@@ -6,7 +6,7 @@ export function useScrollToTop() {
 
   // Function to show/hide the button based on scroll position
   const handleScroll = () => {
-    if (window.scrollY > 800) {
+    if (window.scrollY > 1200) {
       setIsVisible(true);
     } else {
       setIsVisible(false);

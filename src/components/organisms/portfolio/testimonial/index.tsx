@@ -50,7 +50,7 @@ export default function TestimonialSection() {
                     (testimonial, idx) => (
                       <div
                         key={idx}
-                        className="flex items-start bg-white p-5 rounded-sm shadow-md border-[0.1px] border-galaxy_core"
+                        className="flex flex-col sm:flex-row items-center sm:items-start bg-white p-5 rounded-sm shadow-md border-[0.1px] border-galaxy_core"
                       >
                         <Image
                           src={testimonial.image}
@@ -59,8 +59,10 @@ export default function TestimonialSection() {
                           height={1000}
                           className="object-cover rounded-full w-24 h-24 mr-5"
                         />
-                        <div>
-                          <p className="text-zinc-500">{testimonial.text}</p>
+                        <div className="text-center sm:text-start">
+                          <p className="text-zinc-500 mt-2 sm:mt-0">
+                            {testimonial.text}
+                          </p>
                           <h3 className="font-semibold mt-2">
                             {testimonial.name}
                           </h3>
