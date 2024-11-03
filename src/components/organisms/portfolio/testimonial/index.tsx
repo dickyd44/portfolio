@@ -57,7 +57,7 @@ export default function TestimonialSection() {
                           alt={testimonial.name}
                           width={1000}
                           height={1000}
-                          className="object-cover rounded-full w-24 h-24 mr-5"
+                          className="object-cover rounded-full w-24 h-24 sm:mr-5"
                         />
                         <div className="text-center sm:text-start">
                           <p className="text-zinc-500 mt-2 sm:mt-0">
