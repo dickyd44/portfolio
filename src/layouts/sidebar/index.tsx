@@ -29,7 +29,7 @@ export default function Sidebar({ isOpen }: { isOpen: boolean }) {
                   activeLink === link.link ? "text-galaxy" : ""
                 }`}
               >
-                <div className="flex justify-center items-center mb-1">
+                <div className="flex justify-center items-center">
                   {React.createElement(link.icon)}
                 </div>
                 <span className="text-xs">{link.name}</span>
