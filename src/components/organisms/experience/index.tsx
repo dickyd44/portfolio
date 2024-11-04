@@ -1,11 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import {
-  appearsLeft,
-  appearsRight,
-  appearsBottom,
-  appearsTop,
-} from "@/src/animation";
+import { appearsTop, appearsBottomOneOnOne } from "@/src/animation";
 import Image from "next/image";
 import { EXPERIENCE } from "@/src/constants/experience";
 import { useState } from "react";
@@ -45,13 +40,8 @@ export default function ExperienceSection() {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              variants={
-                idx % 3 === 0
-                  ? appearsLeft
-                  : idx % 3 === 1
-                  ? appearsBottom
-                  : appearsRight
-              }
+              variants={appearsBottomOneOnOne}
+              custom={idx}
               viewport={{ amount: 0, once: true }}
               key={idx}
               className="relative h-full pb-16 border border-slate-300 rounded-sm shadow"

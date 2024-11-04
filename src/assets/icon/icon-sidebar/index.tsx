@@ -10,12 +10,11 @@ export function HomeIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="icon icon-tabler icons-tabler-outline icon-tabler-home"
+      className="icon icon-tabler icons-tabler-outline icon-tabler-smart-home"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
-      <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-      <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+      <path d="M19 8.71l-5.333 -4.148a2.666 2.666 0 0 0 -3.274 0l-5.334 4.148a2.665 2.665 0 0 0 -1.029 2.105v7.2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-7.2c0 -.823 -.38 -1.6 -1.03 -2.105" />
+      <path d="M16 15c-2.21 1.333 -5.792 1.333 -8 0" />
     </svg>
   );
 }
@@ -47,28 +46,22 @@ export function AboutIcon() {
 export function ServiceIcon() {
   return (
     <svg
-      fill="#000000"
-      width="26"
-      height="26"
+      xmlns="http://www.w3.org/2000/svg"
+      width="27"
+      height="27"
+      viewBox="0 0 24 24"
+      fill="none"
       stroke="currentColor"
-      strokeWidth="12"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 423.683 423.683"
+      className="icon icon-tabler icons-tabler-outline icon-tabler-brand-apple-arcade"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <g>
-        <path
-          d="M54.376,287.577h310.459c26.48,0,48.02-13.979,48.02-40.453c0-17.916-10.001-34.07-25.559-42.292
-		c-19.021-72.951-86.061-125.196-162.002-125.223v-3.431h-3.854V61.814h3.854v-9.569h-31.38v9.569h3.854v14.363h-3.854v3.431
-		c-75.941,0.026-142.97,52.272-161.988,125.217c-15.56,8.216-25.573,24.376-25.573,42.291
-		C6.36,273.597,27.896,287.577,54.376,287.577z M47.676,227.145l7.214-2.424l1.617-7.447
-		c13.884-64.232,71.707-110.862,137.467-110.862h31.274c65.763,0,123.582,46.63,137.473,110.862l1.607,7.447l7.223,2.424
-		c8.678,2.92,14.506,10.946,14.506,19.979c0,11.703-9.517,13.647-21.221,13.647H54.376c-11.7,0-21.22-1.944-21.22-13.647
-		C33.162,238.091,38.984,230.065,47.676,227.145z M423.683,334.602v36.836H0v-36.836h25.348v-18.418h372.99v18.418H423.683z"
-        />
-      </g>
+      <path d="M12 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+      <path d="M20 12.5v4.75a.734 .734 0 0 1 -.055 .325a.704 .704 0 0 1 -.348 .366l-5.462 2.58a5 5 0 0 1 -4.27 0l-5.462 -2.58a.705 .705 0 0 1 -.401 -.691l0 -4.75" />
+      <path d="M4.431 12.216l5.634 -2.332a5.065 5.065 0 0 1 3.87 0l5.634 2.332a.692 .692 0 0 1 .028 1.269l-5.462 2.543a5.064 5.064 0 0 1 -4.27 0l-5.462 -2.543a.691 .691 0 0 1 .028 -1.27z" />
+      <path d="M12 7l0 6" />
     </svg>
   );
 }
