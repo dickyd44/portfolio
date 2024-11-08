@@ -15,20 +15,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <RootLayout>
-      <div>
-        {isLoading ? (
-          <LoadingScreen />
-        ) : (
-          <div className="flex">
-            <AppSidebar isOpen={isSidebarOpen} />
-            <div className="flex-col w-full lg:ml-24 overflow-hidden">
-              <AppNavbar toggleSidebar={toggleSidebar} />
-              {children}
-              <AppFooter />
-            </div>
+      {isLoading ? (
+        <LoadingScreen />
+      ) : (
+        <div className="flex">
+          <AppSidebar isOpen={isSidebarOpen} />
+          <div className="flex-col w-full lg:ml-24 overflow-hidden">
+            <AppNavbar toggleSidebar={toggleSidebar} />
+            {children}
+            <AppFooter />
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </RootLayout>
   );
 }
