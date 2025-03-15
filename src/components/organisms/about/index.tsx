@@ -29,6 +29,7 @@ export default function AboutSection() {
             className="bg-white rounded-sm shadow-xl p-4 w-auto"
           >
             <Image
+              priority
               src={Profile}
               alt="profile"
               width={1000}

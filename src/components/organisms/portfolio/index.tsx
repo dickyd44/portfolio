@@ -37,6 +37,7 @@ export default function PortfolioSection() {
             >
               <Link href={img.link} target="_blank">
                 <Image
+                  priority
                   src={img.photo}
                   alt="portfolio"
                   width={1000}

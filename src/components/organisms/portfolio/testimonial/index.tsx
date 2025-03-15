@@ -53,6 +53,7 @@ export default function TestimonialSection() {
                         className="flex flex-col sm:flex-row items-center sm:items-start bg-white p-5 rounded-sm shadow-md border-[0.1px] border-galaxy_core"
                       >
                         <Image
+                          priority
                           src={testimonial.image}
                           alt={testimonial.name}
                           width={1000}

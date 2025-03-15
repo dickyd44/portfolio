@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { appearsLeft } from "@/src/animation";
 import { useHomeStore } from "@/src/store/home";
 import Link from "next/link";
+import Particles from "@/src/animation/ui/particles";
 
 export default function HomeSection() {
   const {
@@ -22,7 +23,7 @@ export default function HomeSection() {
       variants={appearsLeft}
       viewport={{ amount: 0, once: true }}
       id="home"
-      className="container flex items-center min-h-screen"
+      className="container relative flex items-center min-h-screen"
     >
       <div className="flex flex-col justify-center space-y-4">
         <h4 className="text-xl md:text-2xl font-medium">Hello there...</h4>
@@ -95,6 +96,18 @@ export default function HomeSection() {
             <span className="uppercase">hire me</span>
           </Link>
         </div>
+      </div>
+      <div className="absolute inset-0 -z-10">
+        <Particles
+          particleColors={["#87CEEB", "#ADD8E6"]}
+          particleCount={950}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={false}
+          alphaParticles={false}
+          disableRotation={false}
+        />
       </div>
     </motion.section>
   );

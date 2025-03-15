@@ -48,6 +48,7 @@ export default function ExperienceSection() {
             >
               <div className="relative w-full overflow-hidden group">
                 <Image
+                  priority
                   src={experience.photo}
                   alt="news-10"
                   width={1000}
