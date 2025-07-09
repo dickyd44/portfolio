@@ -6,12 +6,14 @@ import { appearsLeft, appearsRight } from "@/src/animation";
 import { RoleText } from "../../atoms/role-text";
 import { ACCOUNT, IDENTITY } from "@/src/constants/about";
 import Link from "next/link";
-import { SectionWrapper } from "../../atoms/section-wrapper";
-import { Card } from "../../atoms/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 export default function AboutSection() {
   return (
-    <SectionWrapper id="about" bgVariant="alternate">
+    <section id="about" className="bg-slate-200 dark:bg-gray-800 min-h-screen flex items-center transition-colors duration-300">
+      <div className="container py-20">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -22,16 +24,23 @@ export default function AboutSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 xl:grid-cols-2 items-center gap-10">
-          <Card variants={appearsLeft} className="p-4">
-            <Image
-              priority
-              src={Profile}
-              alt="profile"
-              width={1000}
-              height={1000}
-              className="object-cover object-right w-full h-[473px] rounded-sm"
-            />
-          </Card>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={appearsLeft}
+            viewport={{ amount: 0, once: true }}
+          >
+            <Card className="p-4">
+              <Image
+                priority
+                src={Profile}
+                alt="profile"
+                width={1000}
+                height={1000}
+                className="object-cover object-right w-full h-[473px] rounded-sm"
+              />
+            </Card>
+          </motion.div>
 
           <motion.div
             initial="hidden"
@@ -59,12 +68,12 @@ export default function AboutSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-5 mt-10 w-full">
               <div>
                 {IDENTITY.map((identity, idx) => (
-                  <div key={idx} className="grid grid-cols-2 mb-3 items-center">
-                    <div className="text-gray-800 dark:text-gray-200 font-medium capitalize text-sm md:text-base xl:text-xs 2xl:text-sm">
+                  <div key={idx} className="flex items-center mb-3">
+                    <div className="text-foreground font-medium capitalize text-sm md:text-base xl:text-xs 2xl:text-sm min-w-[100px]">
                       {identity.title}
                     </div>
-
-                    <div className="pl-4 text-zinc-500 dark:text-zinc-400 capitalize text-sm md:text-base xl:text-xs 2xl:text-sm border-l border-zinc-400 dark:border-zinc-600">
+                    <Separator orientation="vertical" className="mx-4 h-4" />
+                    <div className="text-muted-foreground capitalize text-sm md:text-base xl:text-xs 2xl:text-sm">
                       {identity.subtitle}
                     </div>
                   </div>
@@ -73,12 +82,12 @@ export default function AboutSection() {
 
               <div>
                 {ACCOUNT.map((account, idx) => (
-                  <div key={idx} className="grid grid-cols-2 mb-3 items-center">
-                    <div className="text-gray-800 dark:text-gray-200 font-medium capitalize text-sm md:text-base xl:text-xs 2xl:text-sm">
+                  <div key={idx} className="flex items-center mb-3">
+                    <div className="text-foreground font-medium capitalize text-sm md:text-base xl:text-xs 2xl:text-sm min-w-[100px]">
                       {account.title}
                     </div>
-
-                    <div className="pl-4 text-zinc-500 dark:text-zinc-400 border-l border-zinc-400 dark:border-zinc-600 text-sm md:text-base xl:text-xs 2xl:text-sm">
+                    <Separator orientation="vertical" className="mx-4 h-4" />
+                    <div className="text-muted-foreground text-sm md:text-base xl:text-xs 2xl:text-sm">
                       {account.subtitle}
                     </div>
                   </div>
@@ -87,16 +96,22 @@ export default function AboutSection() {
             </div>
 
             <div className="flex justify-center md:justify-start items-center mt-14 xl:mt-10">
-              <Link
+              <Button
+                variant="galaxy"
+                size="custom"
+                asChild
+              >
+                <Link
                 href="/Resume_Dicky Darmawan.pdf"
                 target="_blank"
-                className="uppercase bg-galaxy_core hover:bg-galaxy_dark text-white w-40 h-12 flex justify-center items-center transition-colors duration-300"
               >
-                review cv
-              </Link>
+                  REVIEW CV
+                </Link>
+              </Button>
             </div>
           </motion.div>
         </div>
-    </SectionWrapper>
+      </div>
+    </section>
   );
 }

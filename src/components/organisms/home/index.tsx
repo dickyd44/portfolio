@@ -4,6 +4,7 @@ import { appearsLeft } from "@/src/animation";
 import { useHomeStore } from "@/src/store/home";
 import Link from "next/link";
 import Particles from "@/src/animation/ui/particles";
+import { Button } from "@/components/ui/button";
 
 export default function HomeSection() {
   const {
@@ -83,18 +84,28 @@ export default function HomeSection() {
           user interface layout based on container proportion.
         </p>
         <div className="flex gap-5">
-          <Link
+          <Button
+            variant="galaxy"
+            size="custom"
+            asChild
+          >
+            <Link
             href="#portfolio"
-            className="bg-galaxy_core hover:bg-galaxy_dark w-32 h-12 flex items-center justify-center transition-colors duration-300"
           >
-            <span className="uppercase text-white">my work</span>
-          </Link>
-          <Link
+              MY WORK
+            </Link>
+          </Button>
+          <Button
+            variant="galaxyOutline"
+            size="custom"
+            asChild
+          >
+            <Link
             href="#contact"
-            className="border-2 border-galaxy_core hover:bg-galaxy_core text-galaxy_core hover:text-white w-32 h-12 flex items-center justify-center transition-all duration-300"
           >
-            <span className="uppercase">hire me</span>
-          </Link>
+              HIRE ME
+            </Link>
+          </Button>
         </div>
       </div>
       <div className="absolute inset-0 -z-10">

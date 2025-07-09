@@ -5,6 +5,8 @@ import { RoleText } from "@/src/components/atoms/role-text";
 import { SKILLS, STACK } from "@/src/constants/my-skills";
 import { useProgressBar } from "@/src/store/progress-bar";
 import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export default function MySkillsSection() {
   return (
@@ -57,9 +59,9 @@ export default function MySkillsSection() {
           className="grid grid-cols-2 gap-4 w-full"
         >
           {STACK.map((stack, index) => (
-            <div
+            <Card
               key={index}
-              className="flex items-center justify-center border-2 border-galaxy_core text-galaxy_core hover:bg-galaxy_core hover:text-white transition-all duration-200 ease-in-out rounded-lg p-4 text-center"
+              className="flex items-center justify-center border-2 border-galaxy_core text-galaxy_core hover:bg-galaxy_core hover:text-white transition-all duration-200 ease-in-out p-4 text-center cursor-default"
             >
               <div className="text-3xl mb-1 mr-2">
                 {React.createElement(stack.icon)}
@@ -67,7 +69,7 @@ export default function MySkillsSection() {
               <div className="text-sm font-medium uppercase cursor-default">
                 {stack.title}
               </div>
-            </div>
+            </Card>
           ))}
         </motion.div>
       </div>

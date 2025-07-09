@@ -11,7 +11,8 @@ import {
 import { RoleText } from "../../atoms/role-text";
 import { useState } from "react";
 import React from "react";
-import { SectionWrapper } from "../../atoms/section-wrapper";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function ServiceSection() {
   const [truncatedIndex, setTruncatedIndex] = useState(
@@ -27,7 +28,8 @@ export default function ServiceSection() {
   };
 
   return (
-    <SectionWrapper id="service" bgVariant="alternate">
+    <section id="service" className="bg-slate-200 dark:bg-gray-800 min-h-screen flex items-center transition-colors duration-300">
+      <div className="container py-20">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -53,27 +55,34 @@ export default function ServiceSection() {
               viewport={{ amount: 0, once: true }}
               key={idx}
             >
-              <div className="cursor-default bg-white dark:bg-gray-800 rounded-sm p-8 hover:bg-galaxy_core hover:border-white hover:text-white group transition-all duration-300">
-                <div className="rounded-full p-4 border-dotted border-2 border-galaxy_core text-galaxy_core w-[86px] group-hover:border-white group-hover:text-white transition duration-200 ease-in-out">
+              <Card className="cursor-default hover:bg-galaxy_core hover:border-white hover:text-white group transition-all duration-300 h-full">
+                <CardHeader>
+                  <div className="rounded-full p-4 border-dotted border-2 border-galaxy_core text-galaxy_core w-[86px] group-hover:border-white group-hover:text-white transition duration-200 ease-in-out">
                   {React.createElement(card.icon)}
-                </div>
-
-                <p className="capitalize font-medium my-3">{card.title}</p>
-                <p className="font-normal text-sm text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-200">
+                  </div>
+                  <CardTitle className="capitalize group-hover:text-white">
+                    {card.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-muted-foreground group-hover:text-zinc-200 mb-4">
                   {truncatedIndex[idx]
                     ? card.subtitle
                     : `${card.subtitle.substring(0, 141)}...`}
-                </p>
-                <span
+                  </CardDescription>
+                  <Button
+                    variant="link"
                   onClick={() => toggleTruncated(idx)}
-                  className="text-galaxy_core text-sm underline group-hover:text-white cursor-pointer"
+                    className="text-galaxy_core group-hover:text-white p-0 h-auto"
                 >
                   {truncatedIndex[idx] ? "Less" : "More"}
-                </span>
-              </div>
+                  </Button>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>
-    </SectionWrapper>
+      </div>
+    </section>
   );
 }

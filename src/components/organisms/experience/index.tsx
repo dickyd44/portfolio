@@ -6,6 +6,9 @@ import { EXPERIENCE } from "@/src/constants/experience";
 import { useState } from "react";
 import { RoleText } from "../../atoms/role-text";
 import { ButtonSeeMore } from "../../atoms/button-see-more";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 export default function ExperienceSection() {
   const [showMore, setShowMore] = useState(false);
@@ -44,8 +47,8 @@ export default function ExperienceSection() {
               custom={idx}
               viewport={{ amount: 0, once: true }}
               key={idx}
-              className="relative h-full pb-16 border border-slate-300 rounded-sm shadow"
             >
+              <Card className="relative h-full overflow-hidden">
               <div className="relative w-full overflow-hidden group">
                 <Image
                   priority
@@ -63,37 +66,38 @@ export default function ExperienceSection() {
                   </div>
                 </div>
 
-                <span className="capitalize absolute right-0 bottom-0 text-sm text-white bg-galaxy_core px-4 py-2 rounded-sm">
+                  <Badge variant="galaxy" className="absolute right-2 bottom-2 text-white bg-galaxy_core">
                   {experience.work}
-                </span>
+                  </Badge>
               </div>
 
-              <div className="p-5 h-auto flex flex-col justify-center items-start">
-                <span className="text-xs capitalize text-zinc-600 border border-zinc-500 px-3 py-1 rounded-sm">
+                <CardContent className="p-5 pb-16">
+                  <Badge variant="outline" className="mb-3">
                   {experience.label}
-                </span>
+                  </Badge>
 
-                <p className="text-lg capitalize font-semibold mt-3">
+                  <CardTitle className="text-lg capitalize mb-3">
                   {experience.title}
-                </p>
+                  </CardTitle>
 
-                <p className="capitalized w-full text-sm text-slate-400 mt-3">
+                  <CardDescription className="text-sm">
                   {expandedIndex[idx]
                     ? experience.subtitle
                     : `${experience.subtitle.substring(0, 50)}...`}
-                </p>
+                  </CardDescription>
 
                 <div className="absolute bottom-5">
-                  <div className="text-sm w-32 h-10 border border-slate-300 hover:bg-galaxy_dark transition-colors duration-300 hover:text-white cursor-pointer shadow mt-3">
-                    <div
+                    <Button
+                      variant="outline"
+                      size="sm"
                       onClick={() => toggleExpanded(idx)}
-                      className="flex justify-center items-center h-full capitalize"
+                      className="capitalize"
                     >
                       {expandedIndex[idx] ? "read less" : "read more"}
-                    </div>
-                  </div>
+                    </Button>
                 </div>
-              </div>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>

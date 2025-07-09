@@ -7,6 +7,7 @@ import { appearsLeft, appearsRight } from "@/src/animation";
 import { useState } from "react";
 import { RoleText } from "../../atoms/role-text";
 import { ButtonSeeMore } from "../../atoms/button-see-more";
+import { Card } from "@/components/ui/card";
 
 export default function PortfolioSection() {
   const [showMore, setShowMore] = useState(false);
@@ -35,7 +36,8 @@ export default function PortfolioSection() {
               key={idx}
               className="overflow-hidden relative group"
             >
-              <Link href={img.link} target="_blank">
+              <Card className="overflow-hidden p-0 border-0">
+                <Link href={img.link} target="_blank">
                 <Image
                   priority
                   src={img.photo}
@@ -52,7 +54,8 @@ export default function PortfolioSection() {
                     {img.description}
                   </p>
                 </div>
-              </Link>
+                </Link>
+              </Card>
             </motion.div>
           ))}
         </div>

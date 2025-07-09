@@ -6,12 +6,13 @@ import { appearsLeft, appearsRightOneOnOne, appearsTop } from "@/src/animation";
 import Link from "next/link";
 import { RoleText } from "../../atoms/role-text";
 import React from "react";
-import { SectionWrapper } from "../../atoms/section-wrapper";
-import { Card } from "../../atoms/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function ContactSection() {
   return (
-    <SectionWrapper id="contact" bgVariant="alternate" className="py-28">
+    <section id="contact" className="bg-slate-200 dark:bg-gray-800 flex items-center py-28 transition-colors duration-300">
+      <div className="container">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -22,9 +23,15 @@ export default function ContactSection() {
         </motion.div>
 
         <div className="w-full grid grid-cols-1 lg:grid-cols-3 lg:gap-6 gap-y-6">
-          <Card variants={appearsLeft} className="col-span-2 p-0">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={appearsLeft}
+            viewport={{ amount: 0, once: true }}
+            className="col-span-2"
+          >
             <FormContact />
-          </Card>
+          </motion.div>
 
           <motion.div
             initial="hidden"
@@ -33,43 +40,56 @@ export default function ContactSection() {
             viewport={{ amount: 0, once: true }}
           >
             {CONTACTS.map((contact, idx) => (
-              <Card
+              <motion.div
                 key={idx}
-                variants={appearsRightOneOnOne}
                 custom={idx}
-                className="p-5 w-full mb-6"
+                variants={appearsRightOneOnOne}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ amount: 0, once: true }}
               >
+                <Card className="p-5 w-full mb-6">
                 <div className="flex items-start gap-4">
                   <div className="bg-galaxy_core p-3 rounded-full text-white">
                     {React.createElement(contact.icon)}
                   </div>
                   <div>
                     <p className="font-medium mb-2">{contact.title}</p>
-                    <p className="text-zinc-500 dark:text-zinc-400">
+                      <p className="text-muted-foreground">
                       {contact.core_title}: {contact.subtitle}
                     </p>
                   </div>
                 </div>
-              </Card>
+                </Card>
+              </motion.div>
             ))}
-            <Card
-              variants={appearsRightOneOnOne}
+            <motion.div
               custom={CONTACTS.length}
-              className="flex justify-center items-start gap-4 p-5"
+              variants={appearsRightOneOnOne}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0, once: true }}
             >
+              <Card className="flex justify-center items-start gap-4 p-5">
               {SOCIAL_MEDIA.map((sosmed, idx) => (
-                <Link
+                <Button
+                  variant="galaxy"
+                  size="icon"
+                  asChild
                   href={sosmed.link}
                   key={idx}
-                  className="bg-galaxy_core p-3 rounded-full text-white hover:bg-galaxy_dark"
                   target="_blank"
                 >
+                  <Link href={sosmed.link} target="_blank">
                   {React.createElement(sosmed.platform)}
-                </Link>
+                  </Link>
+                </Button>
               ))}
-            </Card>
+              </Card>
+            </motion.div>
           </motion.div>
         </div>
-    </SectionWrapper>
+      </div>
+    </section>
   );
 }

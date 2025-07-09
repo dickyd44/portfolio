@@ -1,5 +1,6 @@
 import { appearsBottom } from "@/src/animation";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 interface ButtonSeeMoreProps {
   showMore: boolean;
@@ -18,12 +19,12 @@ export const ButtonSeeMore = ({
       viewport={{ amount: 0, once: true }}
       className="mt-16 text-center"
     >
-      <button
-        className="px-5 py-2 bg-galaxy_core text-white rounded-sm hover:bg-galaxy_dark transition-all"
+      <Button
+        variant="galaxy"
         onClick={() => setShowMore(!showMore)}
       >
         {showMore ? "See Less" : "See More"}
-      </button>
+      </Button>
     </motion.div>
   );
 };
