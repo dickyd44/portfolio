@@ -11,6 +11,7 @@ import {
 import { RoleText } from "../../atoms/role-text";
 import { useState } from "react";
 import React from "react";
+import { SectionWrapper } from "../../atoms/section-wrapper";
 
 export default function ServiceSection() {
   const [truncatedIndex, setTruncatedIndex] = useState(
@@ -26,11 +27,7 @@ export default function ServiceSection() {
   };
 
   return (
-    <section
-      id="service"
-      className="bg-slate-200 min-h-screen flex items-center"
-    >
-      <div className="container py-20">
+    <SectionWrapper id="service" bgVariant="alternate">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -56,13 +53,13 @@ export default function ServiceSection() {
               viewport={{ amount: 0, once: true }}
               key={idx}
             >
-              <div className="cursor-default bg-white rounded-sm p-8 hover:bg-galaxy_core hover:border-white hover:text-white group">
+              <div className="cursor-default bg-white dark:bg-gray-800 rounded-sm p-8 hover:bg-galaxy_core hover:border-white hover:text-white group transition-all duration-300">
                 <div className="rounded-full p-4 border-dotted border-2 border-galaxy_core text-galaxy_core w-[86px] group-hover:border-white group-hover:text-white transition duration-200 ease-in-out">
                   {React.createElement(card.icon)}
                 </div>
 
                 <p className="capitalize font-medium my-3">{card.title}</p>
-                <p className="font-normal text-sm text-zinc-600 group-hover:text-zinc-200">
+                <p className="font-normal text-sm text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-200">
                   {truncatedIndex[idx]
                     ? card.subtitle
                     : `${card.subtitle.substring(0, 141)}...`}
@@ -77,7 +74,6 @@ export default function ServiceSection() {
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+    </SectionWrapper>
   );
 }

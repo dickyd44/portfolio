@@ -9,8 +9,8 @@ export default function Navbar({
 }) {
   return (
     <section className="block lg:hidden">
-      <div className="w-full fixed z-40 bg-white flex justify-between items-center p-3">
-        <p className="text-xl font-bold text-galaxy_core">dicky.</p>
+      <div className="w-full fixed z-40 bg-white dark:bg-gray-800 flex justify-between items-center p-3 transition-colors duration-300 shadow-sm">
+        <p className="text-xl font-bold text-galaxy_core dark:text-galaxy">dicky.</p>
         <button
           type="button"
           onClick={toggleSidebar}

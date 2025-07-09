@@ -12,7 +12,7 @@ export default function Sidebar({ isOpen }: { isOpen: boolean }) {
         isOpen ? "translate-x-0" : "-translate-x-full"
       } lg:translate-x-0 lg:block`}
     >
-      <div className="h-screen w-24 bg-white shadow-2xl">
+      <div className="h-screen w-24 bg-white dark:bg-gray-800 shadow-2xl transition-colors duration-300">
         <div className="flex flex-col">
           {/* icon */}
           <div className="h-11 bg-galaxy_core flex items-center justify-center">
@@ -20,12 +20,12 @@ export default function Sidebar({ isOpen }: { isOpen: boolean }) {
           </div>
 
           {/* menu */}
-          <div className="flex flex-col items-center text-black uppercase font-body w-full h-20">
+          <div className="flex flex-col items-center text-black dark:text-white uppercase font-body w-full h-20">
             {SIDEBAR_LINK.map((link, idx) => (
               <Link
                 key={idx}
                 href={link.link}
-                className={`nav-link border-b border-zinc-200 py-3 w-full text-center hover:text-galaxy ${
+                className={`nav-link border-b border-zinc-200 dark:border-zinc-700 py-3 w-full text-center hover:text-galaxy transition-colors duration-200 ${
                   activeLink === link.link ? "text-galaxy" : ""
                 }`}
               >

@@ -23,7 +23,7 @@ export default function HomeSection() {
       variants={appearsLeft}
       viewport={{ amount: 0, once: true }}
       id="home"
-      className="container relative flex items-center min-h-screen"
+      className="container relative flex items-center min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300"
     >
       <div className="flex flex-col justify-center space-y-4">
         <h4 className="text-xl md:text-2xl font-medium">Hello there...</h4>
@@ -66,18 +66,18 @@ export default function HomeSection() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={index < currentLetterIndex ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0 }}
-                className="border-b border-black pb-0.5"
+                className="border-b border-black dark:border-white pb-0.5"
               >
                 {letter === " " ? "\u00A0" : letter}
               </motion.span>
               {index === currentLetterIndex - 1 && (
-                <span className="ml-0.5 border-r-2 border-black" />
+                <span className="ml-0.5 border-r-2 border-black dark:border-white" />
               )}
             </span>
           ))}
         </h3>
 
-        <p className="text-base text-zinc-500">
+        <p className="text-base text-zinc-500 dark:text-zinc-400">
           The dynamics of how users interact with interactive elements within a{" "}
           <br />
           user interface layout based on container proportion.
@@ -85,13 +85,13 @@ export default function HomeSection() {
         <div className="flex gap-5">
           <Link
             href="#portfolio"
-            className="bg-galaxy_core hover:bg-galaxy_dark w-32 h-12 flex items-center justify-center"
+            className="bg-galaxy_core hover:bg-galaxy_dark w-32 h-12 flex items-center justify-center transition-colors duration-300"
           >
             <span className="uppercase text-white">my work</span>
           </Link>
           <Link
             href="#contact"
-            className="border-2 border-galaxy_core hover:bg-galaxy_core text-galaxy_core hover:text-white w-32 h-12 flex items-center justify-center"
+            className="border-2 border-galaxy_core hover:bg-galaxy_core text-galaxy_core hover:text-white w-32 h-12 flex items-center justify-center transition-all duration-300"
           >
             <span className="uppercase">hire me</span>
           </Link>
@@ -99,7 +99,7 @@ export default function HomeSection() {
       </div>
       <div className="absolute inset-0 -z-10">
         <Particles
-          particleColors={["#87CEEB", "#ADD8E6"]}
+          particleColors={["#87CEEB", "#ADD8E6", "#B0E0E6"]}
           particleCount={950}
           particleSpread={10}
           speed={0.1}

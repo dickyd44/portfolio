@@ -6,11 +6,12 @@ import { appearsLeft, appearsRightOneOnOne, appearsTop } from "@/src/animation";
 import Link from "next/link";
 import { RoleText } from "../../atoms/role-text";
 import React from "react";
+import { SectionWrapper } from "../../atoms/section-wrapper";
+import { Card } from "../../atoms/card";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="bg-slate-200 flex items-center py-28">
-      <div className="container">
+    <SectionWrapper id="contact" bgVariant="alternate" className="py-28">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -21,15 +22,9 @@ export default function ContactSection() {
         </motion.div>
 
         <div className="w-full grid grid-cols-1 lg:grid-cols-3 lg:gap-6 gap-y-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={appearsLeft}
-            viewport={{ amount: 0, once: true }}
-            className="col-span-2"
-          >
+          <Card variants={appearsLeft} className="col-span-2 p-0">
             <FormContact />
-          </motion.div>
+          </Card>
 
           <motion.div
             initial="hidden"
@@ -38,11 +33,11 @@ export default function ContactSection() {
             viewport={{ amount: 0, once: true }}
           >
             {CONTACTS.map((contact, idx) => (
-              <motion.div
+              <Card
                 key={idx}
-                custom={idx}
                 variants={appearsRightOneOnOne}
-                className="bg-white rounded-sm p-5 w-full mb-6"
+                custom={idx}
+                className="p-5 w-full mb-6"
               >
                 <div className="flex items-start gap-4">
                   <div className="bg-galaxy_core p-3 rounded-full text-white">
@@ -50,20 +45,17 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium mb-2">{contact.title}</p>
-                    <p className="text-zinc-500">
+                    <p className="text-zinc-500 dark:text-zinc-400">
                       {contact.core_title}: {contact.subtitle}
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </Card>
             ))}
-            <motion.div
-              className="flex justify-center items-start gap-4 bg-white p-5"
-              initial="hidden"
-              whileInView="visible"
+            <Card
               variants={appearsRightOneOnOne}
               custom={CONTACTS.length}
-              viewport={{ amount: 0, once: true }}
+              className="flex justify-center items-start gap-4 p-5"
             >
               {SOCIAL_MEDIA.map((sosmed, idx) => (
                 <Link
@@ -75,10 +67,9 @@ export default function ContactSection() {
                   {React.createElement(sosmed.platform)}
                 </Link>
               ))}
-            </motion.div>
+            </Card>
           </motion.div>
         </div>
-      </div>
-    </section>
+    </SectionWrapper>
   );
 }
